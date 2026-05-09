@@ -1,0 +1,69 @@
+# ============================
+# OS files
+# ============================
+.DS_Store
+.Rhistory
+.RData
+.Rapp.history
+Thumbs.db
+Desktop.ini
+
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ============================
+# Virtual environment
+# ============================
+.venv/
+venv/
+env/
+ENV/
+
+# ============================
+# IDE / Editor
+# ============================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.claude/
+
+# ============================
+# Generated training artifacts
+# ============================
+TSP_Code/train/output/
+
+# ============================
+# Intermediate generated data
+# (produced by annotation/inference pipeline)
+# ============================
+TSP_Code/dataset_process_and_inference/output_data/*_with_nodes*.json
+TSP_Code/dataset_process_and_inference/output_data/*_generation*.json
+
+# ============================
+# Experimental data (not uploaded to GitHub)
+# ============================
+RQ_Data/
+
+# ============================
+# API keys / credentials
+# ============================
+.env
+
+# ============================
+# Logs, caches
+# ============================
+*.log
+.cache/
+cache/
