@@ -1,0 +1,1852 @@
+{
+    "237845236604191759733726881516225911314.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 25,
+                "cwe": 457,
+                "message": "Uninitialized variable 'name_len' is used in the exact match check. If the common name is not a wildcard, 'name_len' is never set, leading to undefined behavior.",
+                "line_content": "if (name_len == common_name_len && !strcmp(name, common_name))"
+            },
+            {
+                "severity": "medium",
+                "line": 3,
+                "cwe": 362,
+                "message": "The static variable 'net_errno' may lead to race conditions if this function is used in a multi-threaded context, as concurrent calls could interfere with its value.",
+                "line_content": "static int net_errno;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "154467220543713873113853374504431197574.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 6,
+                "cwe": 295,
+                "message": "When X509_V_FLAG_X509_STRICT is set, the code adds X509_V_FLAG_NO_CHECK_ISSUER, effectively disabling issuer verification. This can allow certificate chains that bypass proper issuer checking, leading to potential certificate validation bypass.",
+                "line_content": "if (flags & X509_V_FLAG_X509_STRICT)"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "188637440018908721776191864013209781524.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 37,
+                "cwe": 191,
+                "message": "Potential integer underflow: The subtraction 'n -= (long)id->response_length + 3;' does not validate that 'id->response_length + 3' is less than or equal to n, which could allow an attacker-controlled value to underflow 'n'.",
+                "line_content": "n -= (long)id->response_length + 3;"
+            },
+            {
+                "severity": "High",
+                "line": 160,
+                "cwe": 416,
+                "message": "Use-after-free: The code accesses s->session->statem.ocsp_response->response_len after freeing s->session->statem.ocsp_response (line 111), which could lead to undefined behavior.",
+                "line_content": "s->session->statem.ocsp_response->response_len;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "314291761316191237921700054985357862323.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 10,
+                "cwe": 476,
+                "message": "Missing null pointer check for 'trak' before accessing its members, which could lead to a null dereference.",
+                "line_content": "trk = trak->track->private;"
+            },
+            {
+                "severity": "Medium",
+                "line": 11,
+                "cwe": 476,
+                "message": "No check is performed to ensure that gf_list_get(trk->Entries, 0) did not return NULL before using it.",
+                "line_content": "entry = gf_list_get(trk->Entries, 0);"
+            },
+            {
+                "severity": "Medium",
+                "line": 12,
+                "cwe": 476,
+                "message": "Dereferencing the result of gf_list_get(entry->child_boes, 0) without a null pointer check may lead to a null dereference.",
+                "line_content": "dietype = gf_list_get(entry->child_boes, 0)->type;"
+            },
+            {
+                "severity": "Medium",
+                "line": 14,
+                "cwe": 476,
+                "message": "No null pointer check for 'the_file' or its file pointer before using it in gf_fseek.",
+                "line_content": "pos = gf_fseek(the_file->file, 0, SEEK_CUR);"
+            },
+            {
+                "severity": "Medium",
+                "line": 22,
+                "cwe": 190,
+                "message": "Potential integer truncation or overflow when converting the sum of 'pos' (u64) and 'entry->size' to u32.",
+                "line_content": "size = (u32) (pos + entry->size);"
+            }
+        ],
+        "vuln_count": 5
+    },
+    "23950842344009629406744557105771293099.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 15,
+                "cwe": 457,
+                "message": "Missing variable name in X509 pointer declaration leads to an uninitialized pointer. Any subsequent use of this pointer (or assumed variable) may result in undefined behavior.",
+                "line_content": "    X509 * = NULL;"
+            },
+            {
+                "severity": "High",
+                "line": 83,
+                "cwe": 457,
+                "message": "In the ECC certificate processing block the code uses an unspecified pointer (e.g. in calls to X509_check_purpose and via ->e_flags) due to the missing variable name. This leads to dereferencing an uninitialized pointer and could cause unpredictable behavior.",
+                "line_content": "         = (c->pkeys[SSL_PKEY_ECC]).509;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "52215105009261879265880944539805400781.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 48,
+                "cwe": 457,
+                "message": "The variable 'ret' is used without prior declaration or initialization, leading to undefined behavior in error handling.",
+                "line_content": "ret = 1;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "139373073930644458360658711350500084157.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 3,
+                "cwe": 190,
+                "message": "Potential integer overflow when calculating the allocation size (frag->size + AV_INPUT_BUFFER_PADDING_SIZE). If frag->size is very large, the addition may overflow resulting in a buffer smaller than expected.",
+                "line_content": "MFCALLOC_CHECK(av_buffer_alloc(&frag->data, frag->size + AV_INPUT_BUFFER_PADDING_SIZE));"
+            },
+            {
+                "severity": "High",
+                "line": 4,
+                "cwe": 120,
+                "message": "Possible buffer overflow in memcpy. There is no check to ensure that the number of bytes copied (frag->data_end - frag->data_start) does not exceed the allocated buffer size.",
+                "line_content": "memcpy(frag->data->data, frag->data_start, frag->data_end - frag->data_start);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "199873059993886309598181032380750412741.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 5,
+                "cwe": 125,
+                "message": "Potential buffer over-read: the function reads 2 bytes per iteration from 'src' without verifying that the source buffer is large enough.",
+                "line_content": "block[i] = av_int2float(bytestream2_get_ne16(src + i * 2));"
+            },
+            {
+                "severity": "high",
+                "line": 5,
+                "cwe": 119,
+                "message": "Potential buffer overflow: the function writes to 'block' without ensuring that 'block' has space for 'n' float elements.",
+                "line_content": "block[i] = av_int2float(bytestream2_get_ne16(src + i * 2));"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "19272837122676011976404639411214305373.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 16,
+                "cwe": 190,
+                "message": "Unchecked addition of klv->uid_size to klv->offset may lead to an integer overflow if klv->uid_size is large.",
+                "line_content": "klv->offset += klv->uid_size;"
+            },
+            {
+                "severity": "Medium",
+                "line": 33,
+                "cwe": 190,
+                "message": "Unchecked addition of klv->size to klv->offset may lead to an integer overflow if klv->size is unexpectedly large.",
+                "line_content": "klv->offset += klv->size;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "71963287905289070885420088207293735411.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 4,
+                "cwe": 476,
+                "message": "The function does not verify that 'buf' is non-null before dereferencing, risking a null pointer dereference.",
+                "line_content": "ace_t *ace = buf;"
+            },
+            {
+                "severity": "medium",
+                "line": 6,
+                "cwe": 476,
+                "message": "The 'fuid_map' pointer is not checked for null before being used, which may lead to a null pointer dereference.",
+                "line_content": "len = zfs_fuid_map_id(fuid_map, type, id, &ace->ace_who);"
+            },
+            {
+                "severity": "medium",
+                "line": 4,
+                "cwe": 119,
+                "message": "The function assumes that 'buf' points to an allocated region large enough for an 'ace_t' structure, lacking bounds checking and risking a buffer overflow.",
+                "line_content": "ace_t *ace = buf;"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "252602382332501216118628484519083104960.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 11,
+                "cwe": 119,
+                "message": "Incorrect loop counter initialization: 'i' is set to the pointer value returned by ListHead(mode_changes) rather than starting from 0. This may lead to writing outside the bounds of the allocated buffer.",
+                "line_content": "for (i = node = ListHead(mode_changes);"
+            },
+            {
+                "severity": "Medium",
+                "line": 8,
+                "cwe": 690,
+                "message": "Missing check for malloc() failure: Not verifying if the memory allocation succeeded may lead to a null pointer dereference.",
+                "line_content": "ret = (char *)malloc(malen);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "331280553536111305444452067910134685213.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 6,
+                "cwe": 835,
+                "message": "Potential infinite loop if 'ace' contains a cycle. Without cycle detection, a malicious cyclic list could cause a denial of service.",
+                "line_content": "for (a = ace; a != NULL; a = a->za_link_net)"
+            },
+            {
+                "severity": "medium",
+                "line": 9,
+                "cwe": 190,
+                "message": "Possible integer overflow when multiplying 'count' by sizeof(zfs_oldace_t). A very long list could lead to an overflow resulting in an incorrect abstract size.",
+                "line_content": "return (count * sizeof (zfs_oldace_t));"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "9878755237142912804167015160948597580.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 33,
+                "cwe": 457,
+                "message": "If 'name' is NULL, the code skips initializing 'tmp' but still passes it to pj_strdup, resulting in undefined behavior due to use of uninitialized memory.",
+                "line_content": "    pj_strdup( endpt->pool, &endpt->host_name, tmp);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "313112639080019125071656387857790311324.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 58,
+                "cwe": 476,
+                "message": "The code directly dereferences 'user' and 'passwd' (using user[0] and passwd[0]) with no prior NULL-check. If either pointer is NULL, this can lead to a null pointer dereference.",
+                "line_content": "if (user[0] || passwd[0])"
+            },
+            {
+                "severity": "medium",
+                "line": 67,
+                "cwe": 120,
+                "message": "Using strmake_buf to copy user-supplied strings without an explicit bounds check may lead to buffer overflow issues if the destination buffers are not properly sized.",
+                "line_content": "strmake_buf(mysql->options.user, user);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "154717735935424007783008732329148284458.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 26,
+                "cwe": 457,
+                "message": "The variable 'new_value' is not reset at the beginning of each loop iteration. If a previous field (e.g., with name \"create\") sets 'new_value', subsequent iterations where the field name is different will still see that stale value. This can lead to incorrect CDATA handling and may result in malformed XML or injection issues.",
+                "line_content": "if (!new_value || !*new_value)"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "140395222213798372326678746527348013439.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 33,
+                "cwe": 125,
+                "message": "The hard-coded length of 50 provided to send_query does not match the actual length of the string literal. This discrepancy can lead to out-of-bounds memory accesses when the function reads past the string buffer.",
+                "line_content": "if (mysql->methods->send_query(mysql, \"CHANGE USER /* for mysql_server_init */\", 50))"
+            },
+            {
+                "severity": "medium",
+                "line": 59,
+                "cwe": 190,
+                "message": "Potential integer overflow when calculating tmp_len from dir_len and home_len. If these values are large or not properly validated, the resulting allocation size may wrap around, leading to buffer allocation issues.",
+                "line_content": "tmp_len= dir_len + home_len + 2;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "163501702843817152557169557517496613723.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 30,
+                "cwe": 125,
+                "message": "Dereferencing nonce+33 without verifying the length of nonce may lead to an out\u2010of\u2010bounds read if nonce is shorter than 33 characters.",
+                "line_content": "    count = (unsigned int)apr_atoi64(nonce + 33);"
+            },
+            {
+                "severity": "high",
+                "line": 34,
+                "cwe": 120,
+                "message": "Using the same buffer 'nonce' as both source and destination in apr_snprintf without ensuring sufficient buffer size can lead to a buffer overflow or undefined behavior.",
+                "line_content": "    if ((nonce_str_len = apr_snprintf(r->pool, nonce, \"%s%08X\", nonce, count)) == -1) {"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "247483182249101642253862132650161814144.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 13,
+                "cwe": 119,
+                "message": "Possible out-of-bounds write: The code writes to pmatch[1] without verifying that the pmatch array has at least two elements.",
+                "line_content": "      pmatch[0].rm_eo = pmatch[1].rm_so = 0;"
+            },
+            {
+                "severity": "medium",
+                "line": 15,
+                "cwe": 476,
+                "message": "Potential null pointer dereference: The function calls strlen(string) without validating that string is not NULL.",
+                "line_content": "  return re_search_2 (pat, 0, string, strlen (string), nmatch, pmatch, eflags);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "308691212594776072282060665563668939201.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 6,
+                "cwe": 20,
+                "message": "The result of strtoull is not validated with errno, which may lead to improper handling of invalid numeric input or overflow scenarios.",
+                "line_content": "uint64_t ncount = strtoull(nonce, NULL, 10);"
+            },
+            {
+                "severity": "medium",
+                "line": 21,
+                "cwe": 208,
+                "message": "Using strcmp for comparing potentially sensitive values (opaque, realm, username) can lead to timing side-channel vulnerabilities. Consider using constant-time comparison functions if these values are meant to be secret.",
+                "line_content": "return (strcmp(opaque, this->opaque_) == 0 &&"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "186292960515269323243155490496590911998.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 24,
+                "cwe": 327,
+                "message": "The code uses the MD5 hash function via ap_md5_hash. MD5 is considered cryptographically weak and susceptible to collision attacks, making it unsuitable for secure authentication.",
+                "line_content": "hash = ap_md5_hash(r->pool, username, \":\", realm, \":\", cnonce,"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "204044538574346680147049592540120855199.cpp": {
+        "vulns": [
+            {
+                "severity": "low",
+                "line": 8,
+                "cwe": 20,
+                "message": "Improper input validation when comparing header names may allow bypass of the intended check for 'Transfer-Encoding'. Using a fixed comparison length of 13 characters can lead to partial matches (e.g. headers starting with 'Transfer-Encoding') that may not be intended.",
+                "line_content": "if (conn->request_info.proto_version < 11 &&"
+            },
+            {
+                "severity": "medium",
+                "line": 14,
+                "cwe": 680,
+                "message": "Potential integer overflow in the calculation used for memory allocation. Adding field.len and value.len to sizeof(struct ht_header) without proper overflow checks can result in a smaller allocation than expected, leading to a buffer overflow.",
+                "line_content": "hh = (struct ht_header *) MG_CALLOC(1, sizeof(struct ht_header) + field.len + 1 +"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "124057808242539897718146313024186408733.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 7,
+                "cwe": 190,
+                "message": "The return value from redisvLenprintf is not checked for errors. A negative or overly large value could lead to an integer overflow when adding 1 and a subsequent improper allocation size in calloc.",
+                "line_content": "    len = redisvLenprintf(NULL, 0, fmt, ap) + 1;"
+            },
+            {
+                "severity": "medium",
+                "line": 17,
+                "cwe": 0,
+                "message": "Reinitializing the va_list 'ap' with va_start without first making a copy (via va_copy) can lead to undefined behavior on some platforms.",
+                "line_content": "    va_start(ap, fmt);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "57363592327327551218137978523129438821.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 22,
+                "cwe": 190,
+                "message": "Potential integer overflow during memory allocation: the multiplication inside ALLOC_MULT(typval_T, len) may overflow if sizeof(typval_T) * len exceeds the maximum allocatable size. The current check against ST32_MAX might be insufficient.",
+                "line_content": "tv = ALLOC_MULT(typval_T, len);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "87395745926814073010421612112182411146.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 75,
+                "cwe": 457,
+                "message": "Use of uninitialized variable 'data' in the TYPE_STRING branch: 'data' is never initialized before being passed to r_str_new, which may lead to undefined behavior.",
+                "line_content": "obj->string = r_str_new ((const char *)data);"
+            },
+            {
+                "severity": "medium",
+                "line": 6,
+                "cwe": 476,
+                "message": "Missing null check for the return value of new_object: if new_object returns NULL, dereferencing it (e.g., accessing obj->tuple) will lead to a null pointer dereference.",
+                "line_content": "obj = new_object (TYPE_TUPLE);"
+            },
+            {
+                "severity": "medium",
+                "line": 77,
+                "cwe": 252,
+                "message": "Unchecked return value of r_buffer_read_at: if the read fails, 'data' may remain uninitialized before being used by read32.",
+                "line_content": "r_buffer_read_at (buf, 0, data, 4);"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "202083943806554224938948869647121306205.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 21,
+                "cwe": 121,
+                "message": "Potential buffer overflow: The code writes to wordbuf[len - 1] using the user\u2010supplied len without checking if len is within the bounds of wordbuf, which can lead to an out-of-bounds write if len is too large.",
+                "line_content": "wordbuf[len - 1] = NUL;"
+            },
+            {
+                "severity": "High",
+                "line": 31,
+                "cwe": 121,
+                "message": "Potential buffer overflow: Appending suffi into wordbuf using vim_strncpy with a length based solely on user-supplied len may exceed the fixed size of wordbuf if len is not properly validated.",
+                "line_content": "vim_strncpy(wordbuf + len, suffi, sizeof(wordbuf) - len);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "73524206464143471860304641579213787998.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 159,
+                "cwe": 457,
+                "message": "The variable 'start_sug' is used without guaranteed initialization. If no cached suggestions are found in the initial for-loop, 'start_sug' is never set before its use in the condition at the 'found:' label, leading to undefined behavior.",
+                "line_content": "if (spell->ss.sg_used > start_sug)"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "339532599564532936759475858060064115996.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 32,
+                "cwe": 476,
+                "message": "Dereferencing the 'preword' pointer without checking if it is NULL. If a NULL pointer is passed, it would result in a NULL pointer dereference.",
+                "line_content": "if (preword[0] == NUL)"
+            },
+            {
+                "severity": "medium",
+                "line": 132,
+                "cwe": 120,
+                "message": "Using STRCPY to copy into 'best_suggest' without bounds checking could lead to a buffer overflow if the calculated offset exceeds the allocated array size.",
+                "line_content": "STRCPY(best_suggest + best_i * (SP_NORM_LEN + 1), suggest);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "20477301319564092826881359360072690637.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 36,
+                "cwe": 843,
+                "message": "Type confusion vulnerability: when input_tensor.dtype() is DT_STRING, the code incorrectly uses input_tensor.flat<int64>() instead of the proper type (likely flat<tstring>()), which can lead to undefined behavior or memory corruption.",
+                "line_content": "        const auto& input = input_flat(i);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "246197300495534016983211258169965256371.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 15,
+                "cwe": 0,
+                "message": "Key and IV are loaded into the device registers (lines 15-16) after initiating the decryption engine (via the CR register). This misordering may lead to the decryption operation using stale or uninitialized cryptographic parameters.",
+                "line_content": "memcpy(dev->aes->KEYWR, aes_key, 16);"
+            },
+            {
+                "severity": "Medium",
+                "line": 18,
+                "cwe": 119,
+                "message": "The function does not validate that src_len does not exceed the AES engine's internal buffer size. This may allow an out-of-bounds write to the hardware register mapped memory when copying the source data.",
+                "line_content": "memcpy(dev->aes->SRCR, src, src_len);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "12410117027149965695848515580913254996.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 7,
+                "cwe": 134,
+                "message": "Improper use of snprintf with a va_list argument. The function should use vsnprintf instead of snprintf to properly handle variable arguments. Using snprintf here leads to undefined behavior.",
+                "line_content": "snprintf(buf, sizeof(buf), fmt, args);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "159918931509621714730235443313644442940.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 21,
+                "cwe": 120,
+                "message": "The code copies percent\u2010encoded data from uri->user into a fixed 256-byte buffer without checking that the encoded length will not exceed the buffer. This lack of bounds checking can lead to a buffer overflow.",
+                "line_content": "while (*p) {"
+            },
+            {
+                "severity": "High",
+                "line": 90,
+                "cwe": 0,
+                "message": "The code writes into the memory returned by lua_pushlstring, which is meant to be immutable. Modifying Lua string data can lead to undefined behavior.",
+                "line_content": "pp = lua_pushlstring(ls, buf, len);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "186733077934872596409489233730523373191.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 102,
+                "cwe": 119,
+                "message": "Potential buffer overflow: The memcpy call writes extra bytes (CHACHA_POLY1305_CHUNK - (adlen % CHACHA_POLY1305_CHUNK)) to outp + mlen without verifying that the output buffer has sufficient space.",
+                "line_content": "memcpy(outp + mlen, overhang, CHACHA_POLY1305_CHUNK - (adlen % CHACHA_POLY1305_CHUNK));"
+            },
+            {
+                "severity": "high",
+                "line": 20,
+                "cwe": 347,
+                "message": "Incorrect authentication data length update: In the encryption branch loop, adding the entire message length (mlen) on each iteration instead of the chunk length can lead to an incorrect Poly1305 tag calculation, potentially compromising message authenticity.",
+                "line_content": "poly1305_ct->aadlen += mlen;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "6237434061734056480681851694494571582.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 58,
+                "cwe": 20,
+                "message": "Unchecked output pointer 'hash_len'. The function dereferences and writes to the user-supplied pointer without first validating it with an access rights check, which could lead to memory corruption if an invalid pointer is provided.",
+                "line_content": "*hash_len = ct->hash_len;"
+            },
+            {
+                "severity": "Medium",
+                "line": 13,
+                "cwe": 0,
+                "message": "Potential pointer truncation vulnerability. Casting the pointer 'key' to a 32-bit type (u32) may lead to truncation issues on 64-bit platforms, potentially undermining the mmu access rights checks.",
+                "line_content": "res = tee_mmu_check_access_rights(TEE_MMU_USER_SPACE, (u32)key, key_len, TEE_ACCESS_READ | TEE_ACCESS_PRIVATE);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "61835631258553589899741864938312720421.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 24,
+                "cwe": 120,
+                "message": "The memmove() call uses nread bytes without verifying that the destination buffer (k->write.buf) is large enough. If nread exceeds the allocated size of the destination buffer, this could result in a buffer overflow.",
+                "line_content": "memmove(k->write.buf, str, nread);"
+            },
+            {
+                "severity": "medium",
+                "line": 53,
+                "cwe": 0,
+                "message": "The memcpy() call copies from k->write.buf to itself after reassigning k->write.buf to data->state.write_buffer. This likely indicates a logic error where the intended source buffer is lost, possibly causing unexpected behavior.",
+                "line_content": "memcpy(str, k->write.buf, k->wright);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "5768001876506767416149529639101451517.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 8,
+                "cwe": 119,
+                "message": "Potential buffer overflow: no validation is performed to ensure that both 'src' and 'dest' arrays have at least 'nd' elements. If the arrays are undersized, this could lead to an out-of-bounds access.",
+                "line_content": "        dest[i] = src[i];"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "126432526974594553678978957459926794224.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 26,
+                "cwe": 416,
+                "message": "Detaching the ArrayBuffer (buf->Detach()) invalidates the pointer obtained earlier via buf->GetContents().Data(), which can lead to a use-after-free vulnerability if the caller attempts to use the returned pointer.",
+                "line_content": "  buf->Detach();"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "11706573955653474280028179248856872393.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 13,
+                "cwe": 119,
+                "message": "Incorrect bounds check in DataView creation: the check compares byte_length against the full ArrayBuffer size rather than the available size after accounting for the buffer's byte offset, which can lead to out-of-bounds access.",
+                "line_content": "  if (byte_length > GetArrayBufferByteLength(buffer)) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "25752713800948713783733191170138787266.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 11,
+                "cwe": 120,
+                "message": "Potential buffer overflow vulnerability: The allocated buffer for new_label is computed as strlen(label) + 10, which does not account for the length of node->name. When sprintf writes \"%s:%s\", it may exceed the allocated space if node->name is longer than expected.",
+                "line_content": "ALLOC(new_label, strlen(label) + 10, \"set_node_label(label)\");"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "17899414053142124040814954628066021025.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 15,
+                "cwe": 835,
+                "message": "Infinite loop possibility: If 'len' is a multiple of 8, the expression 'round_down(len, 8)' does not decrease 'len', potentially causing an infinite loop and leading to a denial of service.",
+                "line_content": "while (len > 0) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "47655166599486032596045814586207881127.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 21,
+                "cwe": 119,
+                "message": "Potential buffer overflow: The memmove call uses 'obj->length - old_len' as the length to copy instead of subtracting 'obj->offset + old_len', which may cause copying more bytes than allocated if 'obj->offset' is non-zero.",
+                "line_content": "memmove (obj->data + obj->offset + new_len, obj->data + obj->offset + old_len, obj->length - old_len);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "1125307710474143636532531947937619105.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 8,
+                "cwe": 125,
+                "message": "Potential out-of-bound read: CUR_SCHAR(cur, 1) may access memory beyond the buffer when (end - cur) equals 1, leading to an out-of-bound access.",
+                "line_content": "    c = CUR_SCHAR(cur, 1);"
+            },
+            {
+                "severity": "High",
+                "line": 31,
+                "cwe": 457,
+                "message": "Uninitialized variable 'last' is used when the input does not start with '\"'. In the else branch, 'last' is never initialized before computing *len = last - cur.",
+                "line_content": "    *len = last - cur;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "264369662740461059623453992041597452976.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 30,
+                "cwe": 20,
+                "message": "Missing validation for negative 'size' parameter. The function only checks for size == 0 but does not ensure that size is positive before passing it to xmlParseChunk, which may lead to undefined behavior.",
+                "line_content": "rv = xmlParseChunk(parser, buffer, size, 1);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "232600787635422683969155005211993161903.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 7,
+                "cwe": 119,
+                "message": "Data is written into s->init_buf->data without verifying its allocated size, which can lead to a buffer overflow if the buffer is too small.",
+                "line_content": "p = s->init_buf->data;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "12633599172165225664891545432258539581.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 4,
+                "cwe": 327,
+                "message": "Usage of SSLv3_server_method() exposes the application to vulnerabilities inherent in SSLv3, which is considered insecure due to known protocol weaknesses.",
+                "line_content": "return SSLv3_server_method();"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "120265550085686063549325262065017863678.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 119,
+                "cwe": 674,
+                "message": "Unbounded recursion in the verification logic may be exploited by a crafted certificate chain to trigger excessive recursion and potentially result in a stack exhaustion (DoS condition).",
+                "line_content": "return X509_verify(match.location.location, all_certs, host, ip_address, std::vector<uint8_t>(), basic_constraints);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "178756377140107920069006941176908347818.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "7639744603148415295117947552072611110.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 15,
+                "cwe": 125,
+                "message": "Potential out-of-bounds read: when cmd->name_len equals line_len, arg is set to line + line_len and dereferenced in the condition, which can lead to accessing memory beyond the allocated buffer.",
+                "line_content": "  if (*arg == ' ') {"
+            },
+            {
+                "severity": "Medium",
+                "line": 7,
+                "cwe": 476,
+                "message": "Missing null pointer check for the 'cmd' pointer may lead to a NULL pointer dereference if an invalid pointer is passed.",
+                "line_content": "  cmd->type = SMTP_COMMAND_TYPE_AUTH;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "301334367618255423828978014207741940057.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "299775878508230369451296292594991345629.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 30,
+                "cwe": 369,
+                "message": "Potential division by zero: ct->segment_ids[i].num_segments is used as the divisor in the modulo operation without verifying that it is non-zero.",
+                "line_content": "ct->segment_ids[i].num_segments;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "291378614160696408367786950172205776235.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 29,
+                "cwe": 125,
+                "message": "Potential buffer under-read vulnerability in the backward scanning loop. The condition 'in >= uncompressed' permits the case where 'in' equals 'uncompressed', and then accessing in[-1] reads memory before the start of the buffer.",
+                "line_content": "while (in >= uncompressed && out < end && in[-1] == out[-1]) {"
+            },
+            {
+                "severity": "Medium",
+                "line": 53,
+                "cwe": 125,
+                "message": "Potential buffer under-read vulnerability in the backward scanning loop for the 3\u2010byte value case. When 'in' equals 'uncompressed', accessing in[-1] can lead to an out-of-bounds read.",
+                "line_content": "while (in >= uncompressed && out < end && in[-1] == out[-1]) {"
+            },
+            {
+                "severity": "Medium",
+                "line": 37,
+                "cwe": 0,
+                "message": "Potential misaligned memory access when writing a 32-bit value via a cast pointer. Using *((uint32_t *)out) may lead to undefined behavior on architectures that require word-aligned addresses.",
+                "line_content": "*((uint32_t *)out) = SWAP32(count);"
+            },
+            {
+                "severity": "Medium",
+                "line": 65,
+                "cwe": 0,
+                "message": "Potential misaligned memory access when writing a 32-bit value via a cast pointer in the 3-byte run encoding. This can cause undefined behavior if 'out' is not properly aligned.",
+                "line_content": "*((uint32_t *)out) = SWAP32(count);"
+            },
+            {
+                "severity": "Medium",
+                "line": 83,
+                "cwe": 0,
+                "message": "Potential misaligned memory access in the 4-byte run encoding while writing a 32-bit value to 'out'. Casting to (uint32_t *) without ensuring alignment may lead to undefined behavior.",
+                "line_content": "*((uint32_t *)out) = SWAP32(count);"
+            }
+        ],
+        "vuln_count": 5
+    },
+    "308284566027362694532292056572658693398.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 10,
+                "cwe": 476,
+                "message": "Dereferencing a potentially NULL pointer 'zp' without validating it. The code assumes zp is always non-NULL, which could lead to a crash if an attacker-controlled or unverified NULL pointer is passed.",
+                "line_content": "uint32_t mode = zp->z_mode;"
+            },
+            {
+                "severity": "medium",
+                "line": 12,
+                "cwe": 476,
+                "message": "Dereferencing a potentially NULL pointer 'cr' without validating it. This could result in a NULL pointer dereference if the credential pointer is not properly initialized.",
+                "line_content": "uid_t uid = crgetuid(cr);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "317501293423579395075152666033620596303.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "297470292426290932667675718602000618642.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "71082278082709957600802189787292360770.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "214811318517964398865233433020921555884.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "150700038932676378003512297364083503472.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "57196192171205670477359354380079623220.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 54,
+                "cwe": 125,
+                "message": "Potential buffer under-read when accessing p[-1] without checking if p points past the start of the buffer. If p equals the beginning of the input, p[-1] may lead to an out-of-bounds read.",
+                "line_content": "                   if (evaluate && vim9script && !VIM_ISWHITE(p[-1]))"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "288002308329048232981312105085927645971.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 14,
+                "cwe": 401,
+                "message": "The memory allocated for 'query' via batch_readline is never freed, which can lead to a memory leak when this function is called repeatedly.",
+                "line_content": "query= batch_readline(sql_file, &query_length);"
+            },
+            {
+                "severity": "medium",
+                "line": 7,
+                "cwe": 404,
+                "message": "The file pointer 'sql_file' obtained through batch_readline_init is not closed before function exit, potentially causing a file descriptor leak.",
+                "line_content": "batch_readline_init(&sql_file, filename, opt_wl);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "207117192273302066012237607649074650923.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "337460138886326917369351685880118262231.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "310588132715833367858651799073627316780.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 29,
+                "cwe": 401,
+                "message": "Memory leak vulnerability: if get_object fails, already allocated objects in op->data.compound.ob_item from previous iterations are not freed.",
+                "line_content": "if ((op->data.compound.ob_item[i] = get_object(get, getarg, version)) == NULL) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "209893410787671896969279396555520188487.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "130970780896076789715433744788576252590.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 5,
+                "cwe": 690,
+                "message": "The return value of realloc is not checked. If realloc fails and returns NULL, subsequent use of entry->data in memcpy and memset will lead to a NULL pointer dereference.",
+                "line_content": "entry->data = realloc (entry->data, len);"
+            },
+            {
+                "severity": "High",
+                "line": 7,
+                "cwe": 195,
+                "message": "There is no validation to ensure that 'len' is non-negative. A negative 'len' will convert to a very large unsigned value during memcpy, potentially causing a buffer overflow.",
+                "line_content": "memcpy (entry->data, data, len);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "140458841459622310607828249367437305600.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 7,
+                "cwe": 0,
+                "message": "Potential misuse of sizeof() on obj->cp[i].name in the strncmp call: if cp[i].name is a pointer rather than a fixed-size array, sizeof() will return the pointer size instead of the actual string length. This can lead to an incomplete string comparison and possible logic bypass.",
+                "line_content": "if (!strncmp (name, obj->cp[i].name, sizeof (obj->cp[i].name))) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "167587795732249525600053650581205374378.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "7619486215470160470124795256875955704.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "156994679098171234330972345107384239198.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 30,
+                "cwe": 476,
+                "message": "Missing validation for the 'key' pointer. The function does not check if 'key' is NULL before passing it to tee_svc_crypt_copy_to_kernel, which could lead to a NULL pointer dereference.",
+                "line_content": "res = tee_svc_crypt_copy_to_kernel(key, &s->key, key_len);"
+            },
+            {
+                "severity": "Medium",
+                "line": 35,
+                "cwe": 476,
+                "message": "Missing validation for the 'iv' pointer. The code does not check if 'iv' is NULL when iv_len is non-zero, which could lead to a NULL pointer dereference when used in tee_svc_crypt_copy_to_kernel.",
+                "line_content": "if (iv_len) {"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "222486283765456890291618822279138543196.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "198890485042947064490175824424559371096.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "285579392734519433001529070834276886939.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "275206803156550648167499598969630828152.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "250672428215888689038183845343143832317.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "184237572670370834113480134201938058069.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 37,
+                "cwe": 362,
+                "message": "Potential data race condition: the lambda 'increment_row_pointer' (and subsequently the lambdas that call it) concurrently modifies the shared 'csr_row_ptr' without explicit synchronization. This unsynchronized access in a multithreaded context (via Shard) may lead to undefined behavior.",
+                "line_content": "auto increment_row_pointer = [N, &csr_row_ptr](int64_t row) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "135953508687778700317305296783411041148.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "60339065111237288865771677286282831093.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "148744385659242316055803687990870653868.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 59,
+                "cwe": 680,
+                "message": "Potential integer overflow during memory allocation: if container->length becomes extremely large, the multiplication in calloc() may overflow resulting in an under-allocated buffer and possible buffer overflow or memory exhaustion.",
+                "line_content": "    container->data = calloc(container->length, sizeof(json_value_t*));"
+            },
+            {
+                "severity": "low",
+                "line": 93,
+                "cwe": 617,
+                "message": "Using assert for a critical runtime check can be dangerous since in release builds (when NDEBUG is defined) the assert is omitted; if reader->token->type is not JSON_TOKEN_ARRAY_END, undefined behavior might result.",
+                "line_content": "    assert(reader->token->type == JSON_TOKEN_ARRAY_END);"
+            },
+            {
+                "severity": "low",
+                "line": 3,
+                "cwe": 476,
+                "message": "No NULL pointer check for the 'reader' parameter, which is dereferenced immediately. This may lead to a NULL pointer dereference if an invalid pointer is passed.",
+                "line_content": "    json_token_t *token = reader->token;"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "44813751442568103152217068210270397421.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "286384480681517768521746773578341525551.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 42,
+                "cwe": 0,
+                "message": "Potential unaligned memory access: The code casts the pointer returned by nla_data() to a u32 pointer without verifying its alignment, which can cause undefined behavior on architectures with strict alignment requirements.",
+                "line_content": "delim->data[0] = *(u32 *)data;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "302208712952245878066023291473572468798.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 254,
+                "cwe": 415,
+                "message": "The code frees the existing peer certificate via 'X509_free(s->session->peer)' and then reassigns s->session->peer to the local pointer 'peer'. Later, in the error cleanup block (starting at line 322), 'peer' is freed again if non-NULL. This can lead to a double free (or use\u2010after\u2010free) vulnerability if an error is encountered after the assignment.",
+                "line_content": "if (s->session->peer) X509_free(s->session->peer);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "290977185916629644688009362855307271954.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 25,
+                "cwe": 476,
+                "message": "Missing null pointer check for s->s3 before accessing its member 'tmp.message_type'. If s->s3 is NULL, this will cause a null pointer dereference.",
+                "line_content": "if (s->s3->tmp.message_type != SSL3_MT_CERTIFICATE_STATUS) {"
+            },
+            {
+                "severity": "medium",
+                "line": 30,
+                "cwe": 476,
+                "message": "Missing null pointer check for s->packet before accessing its 'length' member. A NULL s->packet would lead to a crash.",
+                "line_content": "len = s->packet->length;"
+            },
+            {
+                "severity": "medium",
+                "line": 20,
+                "cwe": 476,
+                "message": "Potential null pointer dereference when accessing s->cert->key->cert. There is no check that s->cert is non-NULL when s->session->peer is false.",
+                "line_content": "cert = (s->session && s->session->peer) ? s->session->peer : s->cert->key->cert;"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "9295021185363712471723554176915065702.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "307453937267810075119102412444404835804.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "260937253921773432003202843152610669218.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 3,
+                "cwe": 476,
+                "message": "Potential null pointer dereference: The function does not verify that 'tdata' (and its member 'ref_cnt') is non-NULL before dereferencing, which could lead to undefined behavior if a NULL pointer is passed.",
+                "line_content": "    if (pj_atomic_dec_and_get(tdata->ref_cnt) == 0) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "305315776580372381177605693473185627688.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 15,
+                "cwe": 125,
+                "message": "Potential out-of-bounds read: The code accesses s[1] without confirming that there is a valid character beyond s[0]. If s is at the boundary (i.e., s is stop-1), accessing s[1] may lead to undefined behavior.",
+                "line_content": "if (s[0] == '$' && s[1] == '{')"
+            },
+            {
+                "severity": "high",
+                "line": 30,
+                "cwe": 125,
+                "message": "Potential out-of-bounds read: The condition checks s[1] without ensuring that this index is within bounds, leading to a possible read beyond the valid memory region.",
+                "line_content": "else if (s[0] == '\\\\' && s[1] != '\\0')"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "2895213938482921500414367697660724275.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 77,
+                "cwe": 401,
+                "message": "Memory leak: The memory returned by eval_func_name (stored in 'func_name') isn\u2019t freed in the branch where a variable holding a funcref is used. Reassigning 'func_name' from var2.vval.v_string without freeing the original allocation leads to a memory leak.",
+                "line_content": "else if (evaluate && rettv != NULL && !(evalarg->eval_flags & EVAL_NOFUNC))"
+            },
+            {
+                "severity": "High",
+                "line": 106,
+                "cwe": 476,
+                "message": "Potential null pointer dereference: The code dereferences '*arg' (i.e. '**arg') without verifying that '*arg' is not NULL, which may lead to undefined behavior.",
+                "line_content": "if (**arg != '(')"
+            },
+            {
+                "severity": "Medium",
+                "line": 49,
+                "cwe": 125,
+                "message": "Pointer arithmetic vulnerability: The computation 'arg_buf_len = *arg - evalarg->eval_buffer + 1;' assumes that *arg is always positioned after evalarg->eval_buffer. If this ordering isn\u2019t guaranteed, the result may be negative or otherwise incorrect, potentially leading to improper buffer handling.",
+                "line_content": "arg_buf_len = *arg - evalarg->eval_buffer + 1;"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "252683598885484339271210924134806886192.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "241162856705601018775402137926159739133.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "296315884240142310442323972412242371673.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "159841920089841385897016733187754254875.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "143588516645458463174939009348988007000.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "243937627988488956910185765296834933616.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "171495584118101227620264060876132557023.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "332516129715802349391263898863854679410.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 41,
+                "cwe": 476,
+                "message": "Potential NULL pointer dereference: the code accesses 'eki->keyEncryptionAlgorithm->parameter->value.octet_string->data' without verifying that 'eki->keyEncryptionAlgorithm->parameter' and 'eki->keyEncryptionAlgorithm->parameter->value.octet_string' are non-NULL.",
+                "line_content": "if (eki->keyEncryptionAlgorithm->parameter->value.octet_string->data) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "173493069102157945502329503405693757720.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "22770722503596653292375414083920927630.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "146937995679781344156698931373273725685.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 3,
+                "cwe": 789,
+                "message": "Potential uncontrolled memory allocation vulnerability: 'new_size' is not validated against reasonable limits before resizing vectors, which can lead to memory exhaustion if a very large value is provided.",
+                "line_content": "outputs_.resize(new_size);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "260687135369381973058111347602661111338.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 16,
+                "cwe": 617,
+                "message": "Using assert for validating the reply type can be dangerous if assertions are disabled in production. Without runtime checks, an unexpected reply type could lead to undefined behavior.",
+                "line_content": "assert(reply == NULL || reply->type == REDIS_REPLY_INTEGER);"
+            },
+            {
+                "severity": "medium",
+                "line": 22,
+                "cwe": 401,
+                "message": "The memory allocated and assigned to 'reply' is not freed before function exit, leading to a memory leak.",
+                "line_content": "}"
+            },
+            {
+                "severity": "medium",
+                "line": 15,
+                "cwe": 703,
+                "message": "No error handling is performed for the redisCommandArgv call. If this function fails to set a valid reply, subsequent code may operate on an invalid pointer, leading to unpredictable behavior.",
+                "line_content": "redisCommandArgv(c, 1, &buf, &rreply);"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "31502886040129394507356798274439188774.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 4,
+                "cwe": 476,
+                "message": "The function does not check if the pointer 'su' is NULL before dereferencing it, which could lead to a NULL pointer dereference vulnerability.",
+                "line_content": "for (i = 0; i < su->su_n; i++)"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "180334708299490127267284336264485848356.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 62,
+                "cwe": 476,
+                "message": "The code assumes that ct->certs is non-NULL before using it in sk_X509_CTX_push, which can lead to a NULL pointer dereference if the EST_CTX struct is not properly initialized.",
+                "line_content": "if (!sk_X509_CTX_push(ct->certs, cert)) {"
+            },
+            {
+                "severity": "Medium",
+                "line": 82,
+                "cwe": 476,
+                "message": "The code assumes that ct->crls is non-NULL before using it in sk_X509_INFO_push, which can lead to a NULL pointer dereference if the EST_CTX struct is not properly initialized.",
+                "line_content": "if (!sk_X509_INFO_push(ct->crls, it)) {"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "292721968458702177215796039010359817809.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 4,
+                "cwe": 476,
+                "message": "The function dereferences the 'str' pointer without checking if it is NULL. This can lead to a null pointer dereference vulnerability.",
+                "line_content": "  str->set_charset(&my_charset_numeric);"
+            },
+            {
+                "severity": "High",
+                "line": 8,
+                "cwe": 476,
+                "message": "The code dereferences 'args[0]' without validating that 'args[0]' is non-NULL. If 'args[0]' is NULL, this will result in a null pointer dereference.",
+                "line_content": "  if (args[0]->is_null())"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "195565069953192983309651581561842204829.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "51424838324187306201179170319149097372.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 26,
+                "cwe": 125,
+                "message": "Using strlen() on untrusted data (nonce) that may not be null-terminated can lead to out-of-bounds reads.",
+                "line_content": "nonce_len = strlen(nonce);"
+            },
+            {
+                "severity": "medium",
+                "line": 30,
+                "cwe": 690,
+                "message": "Malloc return value is not checked for NULL, which may lead to a NULL pointer dereference if allocation fails.",
+                "line_content": "key = malloc(key_len + 1);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "104059083160028524939451038067188075723.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "13938202178591338262300536447734257427.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 3,
+                "cwe": 476,
+                "message": "The function dereferences pointers (e.g. 'link->attr' and 'prog->au') without checking that 'link', 'prog', or their members are non-NULL. This lack of input validation can lead to null pointer dereference vulnerabilities.",
+                "line_content": "struct bpf_attr *attr = link->attr;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "227625688746277031829401554998270855531.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "16973014497257949215724936865063749094.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "324029991996276152491949382468983384468.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 4,
+                "cwe": 369,
+                "message": "There is a potential division by zero vulnerability if num_buckets_ is 0, since no explicit check prevents this scenario.",
+                "line_content": "    result = result % num_buckets_;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "37261909939737845076342153442916192872.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 12,
+                "cwe": 125,
+                "message": "Incorrect pointer arithmetic: 'chr' is an unsigned char, but is used to dereference memory (using *(chr + 1)). This can lead to an out-of-bounds read and undefined behavior.",
+                "line_content": "return t_strdup_printf(\"\\%02o%02o\", chr, *(chr + 1));"
+            },
+            {
+                "severity": "High",
+                "line": 14,
+                "cwe": 125,
+                "message": "Incorrect pointer arithmetic: 'chr' is not a pointer, yet dereferencing (chr + 1) and (chr + 2) is attempted. This results in potential out-of-bounds memory access and undefined behavior.",
+                "line_content": "return t_strdup_printf(\"\\%02o%02o%02o\", chr, *(chr + 1), *(chr + 2));"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "302130519541992893369727104842820850157.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "45883172016057913686953487206890036792.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "46972725881465985149499954839630368169.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "272099491033120402899753522071810304908.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 2,
+                "cwe": 476,
+                "message": "Missing NULL pointer check for the parameter _cp, which may lead to a null pointer dereference.",
+                "line_content": "const ut8 *cp = (const ut8 *)_cp;"
+            },
+            {
+                "severity": "medium",
+                "line": 3,
+                "cwe": 476,
+                "message": "Missing NULL pointer check for the parameter it, which may lead to a null pointer dereference.",
+                "line_content": "const st_cp_info_method_handle_t *info = it;"
+            },
+            {
+                "severity": "high",
+                "line": 5,
+                "cwe": 125,
+                "message": "Potential out-of-bounds read: no buffer length verification before accessing cp with an offset based on info->reference_kind.",
+                "line_content": "size += R_BIN_JAVA_USHORT (cp + info->reference_kind);"
+            },
+            {
+                "severity": "high",
+                "line": 6,
+                "cwe": 125,
+                "message": "Potential out-of-bounds read: no buffer length verification before accessing cp with an offset based on info->reference_info.",
+                "line_content": "size += R_BIN_JAVA_USHORT (cp + info->reference_info);"
+            }
+        ],
+        "vuln_count": 4
+    },
+    "242075141369724111109822691035524247910.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "69513071876538388452150256743120741889.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 6,
+                "cwe": 476,
+                "message": "The function dereferences the 'desc' pointer without verifying it is non-NULL. If a NULL pointer is passed, it may cause a crash due to a NULL pointer dereference.",
+                "line_content": "if (!(desc->attributes & (napi_writable | napi_configurable))) {"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "257986210375498192987232762125171441300.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "163357230387036848397821811968850599326.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "194852821802796797353172345923308838591.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 51,
+                "cwe": 125,
+                "message": "Potential buffer over-read vulnerability: the code dereferences p[0] and p[1] (to compute the protocol version) without verifying that s->init_msg is long enough. An attacker could supply a truncated message that causes an out\u2010of-bounds read.",
+                "line_content": "int hversion = (p[0] << 8) | p[1];"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "325825584518162262613455323443376674310.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 15,
+                "cwe": 330,
+                "message": "This implementation of mbedtls_hardware_poll produces predictable values instead of cryptographically secure random output, which can compromise the security of random-dependent operations.",
+                "line_content": "for( i = 0; i < use_len; i++ )"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "79020684240436701400676711815816679495.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 18,
+                "cwe": 200,
+                "message": "Sensitive token data is logged in cleartext. Logging tokens can lead to inadvertent exposure of authentication credentials.",
+                "line_content": "log_error(\"token '%s' not found in the database\", token);"
+            },
+            {
+                "severity": "medium",
+                "line": 25,
+                "cwe": 200,
+                "message": "Sensitive token data is logged in cleartext. This log message can reveal token details and facilitate unauthorized analysis.",
+                "line_content": "log_error(\"token '%s' was issued with a key now revoked\", token);"
+            },
+            {
+                "severity": "medium",
+                "line": 32,
+                "cwe": 200,
+                "message": "Sensitive token data is logged in cleartext. Logging tokens in this way can expose sensitive authentication information.",
+                "line_content": "log_error(\"token '%s' is not active\", token);"
+            }
+        ],
+        "vuln_count": 3
+    },
+    "234531980416379556549021067102960026880.cpp": {
+        "vulns": [
+            {
+                "severity": "Low",
+                "line": 3,
+                "cwe": 476,
+                "message": "The function does not check if 'transport' is NULL before dereferencing, which could lead to a null pointer dereference.",
+                "line_content": "    return transport->type;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "278962672350488735453212819205821790644.cpp": {
+        "vulns": [
+            {
+                "severity": "low",
+                "line": 11,
+                "cwe": 0,
+                "message": "Variable shadowing: the local declaration of 'ct' (type CONTET *) shadows the function parameter 'ct' (type EVP_PKEY_CTX *). This can lead to confusion and inadvertent misuse of the intended variable.",
+                "line_content": "CONTET *ct = NULL;"
+            },
+            {
+                "severity": "medium",
+                "line": 15,
+                "cwe": 690,
+                "message": "Unchecked return value: 'GetContet(cert->lib)' is called without checking for a NULL pointer, which may lead to a NULL pointer dereference when passed to EVP_PKCS7_decrypt.",
+                "line_content": "ct = GetContet(cert->lib);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "72603266854869041184850151418762174241.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 68,
+                "cwe": 761,
+                "message": "Pointer arithmetic invalidates the original allocation pointer: c->write_buffer is incremented from its initial value (assigned at line 26) and then later freed (line 75) using Curl_safefree(), which may lead to undefined behavior and potential memory corruption.",
+                "line_content": "c->write_buffer += written;"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "273175683153568099936369908958110822248.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "81784773897860010930739980425979770700.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 38,
+                "cwe": 125,
+                "message": "Potential buffer over-read: the while loop condition 'while (data[0] != '}' && datalen > 0)' accesses data[0] before checking that datalen > 0, which can lead to out-of-bound memory access when datalen is zero.",
+                "line_content": "while (data[0] != '}' && datalen > 0) {"
+            },
+            {
+                "severity": "high",
+                "line": 117,
+                "cwe": 0,
+                "message": "Use of undeclared variables 'ptr_data' and 'ptr_datalen'. Assignments '*ptr_data = data;' and '*ptr_datalen = datalen;' refer to undefined pointers, potentially causing undefined behavior.",
+                "line_content": "*ptr_data = data;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "226203648967677274472624846627308110464.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "94823565117026199642716562185378205366.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 4,
+                "cwe": 476,
+                "message": "The function dereferences uid and gid without checking for NULL, which can lead to a NULL pointer dereference vulnerability if invalid pointers are passed.",
+                "line_content": "    if (*uid != 0 || *gid != 0)"
+            },
+            {
+                "severity": "Medium",
+                "line": 7,
+                "cwe": 476,
+                "message": "The function uses the 'groups' pointer (and indirectly the 'cr' pointer) without validating that they are non-NULL, which could lead to a NULL pointer dereference.",
+                "line_content": "        if (zfs_fuid_map_id(cr, groups[i], &groups[i]) != 0)"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "155065106139338612620235079201616325512.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "236034126400548664465939956935964655288.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 19,
+                "cwe": 125,
+                "message": "Potential out-of-bounds read: the computed index for pParse->aTry uses (pParse->nTry - 1 - (op - OP_EndTry0)). If 'op' is less than OP_EndTry0, the resulting base is negative and the array is accessed out-of-bounds.",
+                "line_content": "top = &pParse->aTry[pParse->nTry-1-base];"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "297174626133736039956958379963698143729.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "174767716129759584914887113889454433018.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "21259706693133687626803793609798957325.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "238246130007727538837030831308690581478.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 22,
+                "cwe": 476,
+                "message": "Potential null pointer dereference: 'p->input' is used without verifying that it is not NULL. If p->input is NULL, accessing its members (like end, consumed, or start) could lead to a crash.",
+                "line_content": "if (p->input->end == 0)"
+            },
+            {
+                "severity": "medium",
+                "line": 22,
+                "cwe": 0,
+                "message": "Error handling issue: After calling XML_RaiseError when the encoding condition is met (p->input->end == 0), the function continues execution instead of aborting. This may leave the parser in an inconsistent state.",
+                "line_content": "if (p->input->end == 0)            XML_RaiseError(p, XML_ERR_INTERNAL_ERROR,\n\t   XML_ERROR_UNTERMINATED_ENCODING,\n\t   NULL, 0, 0, NULL, 0, 0);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "19996176481656673487569365544497532378.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "250835198210885601355615777718388610194.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "11346768115233014612945295583554662914.cpp": {
+        "vulns": [
+            {
+                "severity": "HIGH",
+                "line": 46,
+                "cwe": 0,
+                "message": "The variable 'flags' is used without being declared or initialized, which may lead to undefined behavior.",
+                "line_content": "if (cert && !(flags & CMS_NOCERT)) {"
+            },
+            {
+                "severity": "HIGH",
+                "line": 66,
+                "cwe": 0,
+                "message": "The variable 'kekid' is used without being declared, causing unpredictable behavior in the key decryption logic.",
+                "line_content": "if (!CMS_decrypt_key_agreement(ri, pk, cert, rkey, &rkeylen, rlen, kekid == NULL)) {"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "115770760038316932764628048871316599309.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 35,
+                "cwe": 476,
+                "message": "Potential NULL pointer dereference for the 'reply' parameter. The function does not verify that the pointer 'reply' is non-NULL before assigning to *reply, which could lead to a segmentation fault.",
+                "line_content": "*reply = r;"
+            },
+            {
+                "severity": "medium",
+                "line": 3,
+                "cwe": 476,
+                "message": "Potential NULL pointer dereference for the 'c' parameter. The function does not check whether the connection pointer 'c' is non-NULL before accessing its members, which could lead to a segmentation fault.",
+                "line_content": "int nread = c->reader(c,c->net,&r,1);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "63975678153639511248941829648590051049.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 5,
+                "cwe": 476,
+                "message": "Potential NULL pointer dereference: 'cms' or 'cms->d.encryptedData' is used without a null check before accessing 'recipientInfos'.",
+                "line_content": "if (cms->d.encryptedData->recipientInfos)"
+            },
+            {
+                "severity": "High",
+                "line": 23,
+                "cwe": 476,
+                "message": "Potential NULL pointer dereference: 'ktri->key' is used without verifying it is non-NULL, which can lead to a crash when accessing 'length'.",
+                "line_content": "if (ktri->key->length != 16 && ktri->key->length != 24 && ktri->key->length != 32)"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "45096059729908733252478927124536818692.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "89077207254234320325282840588022424527.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "132620873669439694160183474768177128161.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 12,
+                "cwe": 476,
+                "message": "Missing validation for the 'ri' pointer before dereferencing it. If 'ri' is NULL, accessing 'ri->type' could lead to a null pointer dereference.",
+                "line_content": "if (ri->type != CMS_RECIPINFO_KEYTRANS) {"
+            },
+            {
+                "severity": "medium",
+                "line": 17,
+                "cwe": 476,
+                "message": "Missing validation for the 'ktri' pointer obtained from 'ri->d.ktri'. A NULL 'ktri' would lead to a null pointer dereference in subsequent operations.",
+                "line_content": "ktri = ri->d.ktri;"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "211631153806653141917879947001031108204.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "166846707330820688374163155671263772076.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 21,
+                "cwe": 0,
+                "message": "Incorrect implementation of modular inverse: The function attempts to compute the modular inverse using BN_mod_sub instead of using Fermat's little theorem (inversion should be computed as in^(p-2) mod p). This mistake may lead to invalid cryptographic operations in DSA.",
+                "line_content": "if (!BN_set_word(out, 1) || !BN_mod_sub(out, out, tmp, p, ct))"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "42479659200934592393948938893674748508.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "269160690470292519902973737617142509460.cpp": {
+        "vulns": [
+            {
+                "severity": "medium",
+                "line": 37,
+                "cwe": 476,
+                "message": "Missing a NULL pointer check for 'field_name' before using it in strlen; if field->field_name is NULL, this can lead to a NULL pointer dereference.",
+                "line_content": "   len= strlen(field_name);"
+            }
+        ],
+        "vuln_count": 1
+    },
+    "33908206935235775787740927914368406704.cpp": {
+        "vulns": [
+            {
+                "severity": "high",
+                "line": 10,
+                "cwe": 197,
+                "message": "Potential pointer truncation vulnerability: casting 'src' pointer to uint32_t may truncate a 64-bit pointer on some architectures, possibly leading to an incorrect memory access check.",
+                "line_content": "(uint32_t)src, src_len);"
+            },
+            {
+                "severity": "high",
+                "line": 15,
+                "cwe": 197,
+                "message": "Potential pointer truncation vulnerability: casting 'dst' pointer to uint32_t may truncate a 64-bit pointer on some architectures, undermining the access rights check.",
+                "line_content": "(uint32_t)dst, *dst_len);"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "79909573591005144478836301094847172365.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "134506894236181396928549157126311115562.cpp": {
+        "vulns": [
+            {
+                "severity": "Medium",
+                "line": 15,
+                "cwe": 476,
+                "message": "Passing a NULL pointer to printf (%s format) can lead to undefined behavior or a crash.",
+                "line_content": "printf (\"%s %s\\n\", \"constant_value_attribute\", NULL);"
+            },
+            {
+                "severity": "High",
+                "line": 20,
+                "cwe": 125,
+                "message": "The loop uses an unvalidated count from the input buffer and unsanitized pointer arithmetic (using constant_value_attr->constantvalue_index), potentially leading to a buffer over-read.",
+                "line_content": "for (i = 0; i < count; i++) {"
+            }
+        ],
+        "vuln_count": 2
+    },
+    "166193783957220462608762147118179858978.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "249888989132348825992181647165348265375.cpp": {
+        "vulns": [],
+        "vuln_count": 0
+    },
+    "27496916029527824164774265528242313588.cpp": {
+        "vulns": [
+            {
+                "severity": "High",
+                "line": 26,
+                "cwe": 590,
+                "message": "The function frees the output buffer 'ek', which is owned by the caller and may not have been allocated with OPENSSL_malloc. This can lead to undefined behavior or a double free.",
+                "line_content": "OPENSSL_free(ek);"
+            }
+        ],
+        "vuln_count": 1
+    },  
+        "total_files_with_standard_vulns": 44,
+        "total_standard_vulns": 50,
+        "severity_distribution": {
+            "medium": 25,
+            "high": 24,
+            "low": 1
+        },
+        "cwe_distribution": {
+            "CWE-457": 9,
+            "CWE-295": 1,
+            "CWE-191": 1,
+            "CWE-416": 2,
+            "CWE-190": 8,
+            "CWE-120": 7,
+            "CWE-119": 10,
+            "CWE-835": 2,
+            "CWE-20": 4,
+            "CWE-327": 2,
+            "CWE-121": 2,
+            "CWE-843": 1,
+            "CWE-134": 1
+        }
+}

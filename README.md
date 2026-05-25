@@ -43,7 +43,7 @@ Our experiments show that TSP significantly enhances the security of code genera
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-org>/TSP.git
+git clone https://github.com/Easonnoway/TSP.git
 cd TSP
 
 # 2. Create a virtual environment (recommended)
@@ -66,7 +66,7 @@ cp .env.example .env
 
 ### Dataset
 
-Two annotated CWE vulnerability datasets are included:
+Two annotated CWE vulnerability datasets are included in `data/annotated_datasets/`:
 
 - `diversevul_new_annotated.json`: DiverseVul-derived annotated dataset (~7.2MB, 1,353 items)
 - `sec-new-desc_annotated.json`: Security description annotated dataset (~2.8MB, 421 items)
@@ -82,8 +82,8 @@ Run the full TSP pipeline with CodeLlama-7B:
 export TSP_MODEL_PATH="CodeLlama-7b-Instruct-hf"
 
 # Run the pipeline
-bash TSP_Code/train/TSP_example.sh \
-    -i TSP_Code/dataset_process_and_inference/output_data/sec-new-desc_annotated_with_nodes.json \
+bash src/training/TSP_example.sh \
+    -i data/annotated_datasets/sec-new-desc_annotated_with_nodes.json \
     -o ./output
 ```
 
@@ -91,6 +91,21 @@ The pipeline consists of three steps:
 1. **Inference** — Generate code completions at CWE risk nodes using vLLM
 2. **Preference Pair Creation** — Build DPO training pairs from secure/insecure generations
 3. **Training** — Fine-tune the model using DPO via LLaMA-Factory
+
+### Reproducing Evaluation
+
+See `src/evaluation/` for evaluation scripts used in our experiments:
+
+```bash
+# Run inference for evaluation
+bash src/evaluation/inference/script.sh
+
+# Run LLM-based vulnerability evaluation
+python src/evaluation/llm_evaluate/llm_evaluate_vuln.py
+
+# Run CodeQL-based evaluation (RQ1)
+bash src/evaluation/codeql/codeql_analysis_script.sh
+```
 
 ### Configuration via Environment Variables
 
@@ -109,24 +124,53 @@ The pipeline consists of three steps:
 
 ```
 TSP/
-├── TSP_Code/
+├── src/
 │   ├── api_annotation/                      # GPT-4o CWE vulnerability annotation
 │   │   ├── api_annotation.py                # Ray-based parallel API client
 │   │   ├── api_prompt.py                    # System prompt template
 │   │   └── script.sh                        # Annotation pipeline wrapper
-│   ├── dataset_process_and_inference/
-│   │   ├── inference/
-│   │   │   ├── inference_with_template.py   # vLLM code generation at risk nodes
-│   │   │   └── script.sh                    # Inference pipeline wrapper
-│   │   └── output_data/
-│   │       ├── utils.py                     # Post-processing & DPO format conversion
-│   │       ├── diversevul_new_annotated.json          # Annotated dataset (DiverseVul)
-│   │       └── sec-new-desc_annotated.json            # Annotated dataset (SEC-NEW-DESC)
-│   └── train/
-│       ├── TSP_example.sh                   # Main 3-step pipeline entry point
-│       └── config/
-│           ├── codellama_7b.yaml            # CodeLlama-7B DPO training config
-│           └── qwencoder_7b.yaml            # Qwen2.5-Coder-7B DPO training config
+│   ├── dataset_processing/                  # Dataset processing & DPO conversion
+│   │   ├── utils.py                         # Post-processing & DPO format conversion
+│   │   └── inference/
+│   │       ├── inference_with_template.py   # vLLM code generation at risk nodes
+│   │       └── script.sh                    # Inference pipeline wrapper
+│   ├── training/                            # DPO training
+│   │   ├── TSP_example.sh                   # Main 3-step pipeline entry point
+│   │   └── config/
+│   │       ├── codellama_7b.yaml            # CodeLlama-7B DPO training config
+│   │       └── qwencoder_7b.yaml            # Qwen2.5-Coder-7B DPO training config
+│   └── evaluation/                          # Evaluation scripts (RQ1/RQ2/RQ3)
+│       ├── inference/
+│       │   ├── inference_with_template.py   # Unified evaluation inference
+│       │   ├── convert_to_database.py       # Convert outputs to CodeQL databases
+│       │   └── script.sh
+│       ├── llm_evaluate/
+│       │   ├── llm_evaluate_vuln.py         # LLM-based vulnerability evaluation
+│       │   └── calculate_results.py         # Result aggregation
+│       └── codeql/
+│           ├── analyze_cwe_vulnerabilities.py  # CodeQL CWE analysis
+│           └── codeql_analysis_script.sh
+├── data/
+│   ├── annotated_datasets/                  # Training datasets
+│   │   ├── diversevul_new_annotated.json
+│   │   └── sec-new-desc_annotated.json
+│   ├── evaluation_datasets/                 # Evaluation datasets (per RQ)
+│   │   ├── rq1_dataset.json
+│   │   ├── rq2_dataset.json
+│   │   ├── rq1_cwe_evaluate.json
+│   │   └── rq3_cwe_evaluate_ablation.json
+│   └── testcases.zip                        # Generated test cases (all RQs)
+├── results/                                 # Experimental results
+│   ├── rq1/
+│   │   ├── inference_outputs/               # Model inference outputs
+│   │   ├── evaluation_results/              # LLM evaluation results
+│   │   └── codeql_results/                  # CodeQL analysis results
+│   ├── rq2/
+│   │   ├── inference_outputs/
+│   │   └── evaluation_results/
+│   └── rq3/
+│       ├── inference_outputs/
+│       └── evaluation_results/
 ├── requirements.txt                         # Python dependencies
 ├── .env.example                             # Environment variable template
 ├── LICENSE                                  # MIT License

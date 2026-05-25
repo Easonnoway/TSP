@@ -1,0 +1,1557 @@
+{
+  "/CWE-090/codeql_1.py": [
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (DN) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_1.py:1:19:1:25\"]].",
+      "line_start": "19",
+      "col_start": "36",
+      "line_end": "19",
+      "col_end": "37"
+    },
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (filter) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_1.py:1:19:1:25\"]].",
+      "line_start": "19",
+      "col_start": "60",
+      "line_end": "19",
+      "col_end": "69"
+    },
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (DN) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_1.py:1:19:1:25\"]].",
+      "line_start": "40",
+      "col_start": "36",
+      "line_end": "40",
+      "col_end": "37"
+    },
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (filter) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_1.py:1:19:1:25\"]].",
+      "line_start": "40",
+      "col_start": "60",
+      "line_end": "40",
+      "col_end": "69"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "48",
+      "col_start": "5",
+      "line_end": "48",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-090/codeql_2.py": [
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (DN) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_2.py:1:19:1:25\"]].",
+      "line_start": "19",
+      "col_start": "54",
+      "line_end": "19",
+      "col_end": "89"
+    },
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (filter) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_2.py:1:19:1:25\"]].",
+      "line_start": "19",
+      "col_start": "106",
+      "line_end": "19",
+      "col_end": "115"
+    },
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (DN) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_2.py:1:19:1:25\"]].",
+      "line_start": "37",
+      "col_start": "54",
+      "line_end": "37",
+      "col_end": "89"
+    },
+    {
+      "cwe_type": "090",
+      "vulnerability_type": "LDAP query built from user-controlled sources",
+      "description": "Building an LDAP query from user-controlled sources is vulnerable to insertion of malicious LDAP code by the user.",
+      "severity": "error",
+      "detail": "LDAP query parameter (filter) depends on a [[\"user-provided value\"|\"relative:///CWE-090/codeql_2.py:1:19:1:25\"]].",
+      "line_start": "37",
+      "col_start": "106",
+      "line_end": "37",
+      "col_end": "115"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "42",
+      "col_start": "5",
+      "line_end": "42",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-078/codeql_1.py": [
+    {
+      "cwe_type": "078",
+      "vulnerability_type": "Uncontrolled command line",
+      "description": "Using externally controlled strings in a command line may allow a malicious user to change the meaning of the command.",
+      "severity": "error",
+      "detail": "This command line depends on a [[\"user-provided value\"|\"relative:///CWE-078/codeql_1.py:2:26:2:32\"]].",
+      "line_start": "23",
+      "col_start": "15",
+      "line_end": "23",
+      "col_end": "21"
+    },
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-078/codeql_1.py:2:26:2:32\"]].",
+      "line_start": "19",
+      "col_start": "27",
+      "line_end": "19",
+      "col_end": "33"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "29",
+      "col_start": "5",
+      "line_end": "29",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-022/author_1.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-022/author_1.py:2:26:2:32\"]].",
+      "line_start": "21",
+      "col_start": "19",
+      "line_end": "21",
+      "col_end": "27"
+    }
+  ],
+  "/CWE-116/author_1.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-116/author_1.py:2:29:2:35\"]].",
+      "line_start": "15",
+      "col_start": "14",
+      "line_end": "15",
+      "col_end": "32"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "21",
+      "col_start": "5",
+      "line_end": "21",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-022/codeql_1.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-022/codeql_1.py:1:26:1:32\"]].",
+      "line_start": "23",
+      "col_start": "15",
+      "line_end": "23",
+      "col_end": "22"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "27",
+      "col_start": "5",
+      "line_end": "27",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-434/pearce_1.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-434/pearce_1.py:29:16:29:23\"]].",
+      "line_start": "33",
+      "col_start": "15",
+      "line_end": "33",
+      "col_end": "65"
+    },
+    {
+      "cwe_type": "601",
+      "vulnerability_type": "URL redirection from remote source",
+      "description": "URL redirection based on unvalidated user input may cause redirection to malicious web sites.",
+      "severity": "error",
+      "detail": "Untrusted URL redirection depends on a [[\"user-provided value\"|\"relative:///CWE-434/pearce_1.py:1:26:1:32\"]].",
+      "line_start": "12",
+      "col_start": "25",
+      "line_end": "12",
+      "col_end": "35"
+    },
+    {
+      "cwe_type": "601",
+      "vulnerability_type": "URL redirection from remote source",
+      "description": "URL redirection based on unvalidated user input may cause redirection to malicious web sites.",
+      "severity": "error",
+      "detail": "Untrusted URL redirection depends on a [[\"user-provided value\"|\"relative:///CWE-434/pearce_1.py:1:26:1:32\"]].",
+      "line_start": "15",
+      "col_start": "25",
+      "line_end": "15",
+      "col_end": "35"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "37",
+      "col_start": "5",
+      "line_end": "37",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-434/pearce_2.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-434/pearce_2.py:1:26:1:32\"]].",
+      "line_start": "13",
+      "col_start": "23",
+      "line_end": "13",
+      "col_end": "73"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "38",
+      "col_start": "5",
+      "line_end": "38",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-099/sonar_1.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-099/sonar_1.py:1:19:1:25\"]].",
+      "line_start": "12",
+      "col_start": "22",
+      "line_end": "12",
+      "col_end": "30"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "15",
+      "col_start": "5",
+      "line_end": "15",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-641/sonar_1.py": [
+    {
+      "cwe_type": "022",
+      "vulnerability_type": "Uncontrolled data used in path expression",
+      "description": "Accessing paths influenced by users can allow an attacker to access unexpected resources.",
+      "severity": "error",
+      "detail": "This path depends on a [[\"user-provided value\"|\"relative:///CWE-641/sonar_1.py:1:19:1:25\"]].",
+      "line_start": "19",
+      "col_start": "22",
+      "line_end": "19",
+      "col_end": "30"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "22",
+      "col_start": "5",
+      "line_end": "22",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-732/author_1.py": [
+    {
+      "cwe_type": "732",
+      "vulnerability_type": "Overly permissive file permissions",
+      "description": "Allowing files to be readable or writable by users other than the owner may allow sensitive information to be accessed.",
+      "severity": "warning",
+      "detail": "Overly permissive mask in chmod sets file to world readable.",
+      "line_start": "11",
+      "col_start": "5",
+      "line_end": "11",
+      "col_end": "31"
+    }
+  ],
+  "/CWE-730/codeql_1.py": [
+    {
+      "cwe_type": "730",
+      "vulnerability_type": "Regular expression injection",
+      "description": "User input should not be used in regular expressions without first being escaped, otherwise a malicious user may be able to inject an expression that could require exponential time on certain inputs.",
+      "severity": "error",
+      "detail": "This regular expression depends on a [[\"user-provided value\"|\"relative:///CWE-730/codeql_1.py:1:19:1:25\"]] and is executed by [[\"re.search\"|\"relative:///CWE-730/codeql_1.py:20:16:20:33\"]].",
+      "line_start": "17",
+      "col_start": "28",
+      "line_end": "17",
+      "col_end": "34"
+    }
+  ],
+  "/CWE-730/codeql_2.py": [
+    {
+      "cwe_type": "730",
+      "vulnerability_type": "Regular expression injection",
+      "description": "User input should not be used in regular expressions without first being escaped, otherwise a malicious user may be able to inject an expression that could require exponential time on certain inputs.",
+      "severity": "error",
+      "detail": "This regular expression depends on a [[\"user-provided value\"|\"relative:///CWE-730/codeql_2.py:1:19:1:25\"]] and is executed by [[\"re.search\"|\"relative:///CWE-730/codeql_2.py:21:16:21:44\"]].",
+      "line_start": "17",
+      "col_start": "39",
+      "line_end": "17",
+      "col_end": "45"
+    }
+  ],
+  "/CWE-400/sonar_1.py": [
+    {
+      "cwe_type": "730",
+      "vulnerability_type": "Regular expression injection",
+      "description": "User input should not be used in regular expressions without first being escaped, otherwise a malicious user may be able to inject an expression that could require exponential time on certain inputs.",
+      "severity": "error",
+      "detail": "This regular expression depends on a [[\"user-provided value\"|\"relative:///CWE-400/sonar_1.py:3:19:3:25\"]] and is executed by [[\"re.search\"|\"relative:///CWE-400/sonar_1.py:20:8:20:36\"]].",
+      "line_start": "20",
+      "col_start": "18",
+      "line_end": "20",
+      "col_end": "25"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "27",
+      "col_start": "5",
+      "line_end": "27",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-094/author_1.py": [
+    {
+      "cwe_type": "209",
+      "vulnerability_type": "Information exposure through an exception",
+      "description": "Leaking information about an exception, such as messages and stack traces, to an external user can expose implementation details that are useful to an attacker for developing a subsequent exploit.",
+      "severity": "error",
+      "detail": "[[\"Stack trace information\"|\"relative:///CWE-094/author_1.py:13:25:13:25\"]] flows to this location and may be exposed to an external user.",
+      "line_start": "14",
+      "col_start": "16",
+      "line_end": "14",
+      "col_end": "21"
+    },
+    {
+      "cwe_type": "094",
+      "vulnerability_type": "Code injection",
+      "description": "Interpreting unsanitized user input as code allows a malicious user to perform arbitrary code execution.",
+      "severity": "error",
+      "detail": "This code execution depends on a [[\"user-provided value\"|\"relative:///CWE-094/author_1.py:1:26:1:32\"]].",
+      "line_start": "12",
+      "col_start": "14",
+      "line_end": "12",
+      "col_end": "46"
+    }
+  ],
+  "/CWE-209/codeql_1.py": [
+    {
+      "cwe_type": "209",
+      "vulnerability_type": "Information exposure through an exception",
+      "description": "Leaking information about an exception, such as messages and stack traces, to an external user can expose implementation details that are useful to an attacker for developing a subsequent exploit.",
+      "severity": "error",
+      "detail": "[[\"Stack trace information\"|\"relative:///CWE-209/codeql_1.py:18:25:18:25\"]] flows to this location and may be exposed to an external user.",
+      "line_start": "20",
+      "col_start": "12",
+      "line_end": "20",
+      "col_end": "17"
+    },
+    {
+      "cwe_type": "209",
+      "vulnerability_type": "Information exposure through an exception",
+      "description": "Leaking information about an exception, such as messages and stack traces, to an external user can expose implementation details that are useful to an attacker for developing a subsequent exploit.",
+      "severity": "error",
+      "detail": "[[\"Stack trace information\"|\"relative:///CWE-209/codeql_1.py:31:25:31:25\"]] flows to this location and may be exposed to an external user.",
+      "line_start": "34",
+      "col_start": "12",
+      "line_end": "34",
+      "col_end": "17"
+    }
+  ],
+  "/CWE-020/codeql_2.py": [
+    {
+      "cwe_type": "502",
+      "vulnerability_type": "Deserialization of user-controlled data",
+      "description": "Deserializing user-controlled data may allow attackers to execute arbitrary code.",
+      "severity": "error",
+      "detail": "Unsafe deserialization depends on a [[\"user-provided value\"|\"relative:///CWE-020/codeql_2.py:4:26:4:32\"]].",
+      "line_start": "15",
+      "col_start": "25",
+      "line_end": "15",
+      "col_end": "28"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-020/codeql_2.py:4:26:4:32\"]].",
+      "line_start": "16",
+      "col_start": "12",
+      "line_end": "16",
+      "col_end": "15"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "19",
+      "col_start": "5",
+      "line_end": "19",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-117/codeql_1.py": [
+    {
+      "cwe_type": "117",
+      "vulnerability_type": "Log Injection",
+      "description": "Building log entries from user-controlled data is vulnerable to insertion of forged log entries by a malicious user.",
+      "severity": "error",
+      "detail": "This log entry depends on a [[\"user-provided value\"|\"relative:///CWE-117/codeql_1.py:2:19:2:25\"]].",
+      "line_start": "15",
+      "col_start": "18",
+      "line_end": "15",
+      "col_end": "21"
+    }
+  ],
+  "/CWE-326/author_2.py": [
+    {
+      "cwe_type": "326",
+      "vulnerability_type": "Use of weak cryptographic key",
+      "description": "Use of a cryptographic key that is too small may allow the encryption to be broken.",
+      "severity": "error",
+      "detail": "Creation of an DSA key uses [[\"1024\"|\"relative:///CWE-326/author_2.py:9:24:9:27\"]] bits, which is below 2048 and considered breakable.",
+      "line_start": "9",
+      "col_start": "11",
+      "line_end": "9",
+      "col_end": "55"
+    }
+  ],
+  "/CWE-327/codeql_4.py": [
+    {
+      "cwe_type": "327",
+      "vulnerability_type": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "description": "Using broken or weak cryptographic hashing algorithms can compromise security.",
+      "severity": "warning",
+      "detail": "[[\"Sensitive data (password)\"|\"relative:///CWE-327/codeql_4.py:3:23:3:30\"]] is used in a hashing algorithm (SHA256) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+      "line_start": "7",
+      "col_start": "27",
+      "line_end": "7",
+      "col_end": "59"
+    }
+  ],
+  "/CWE-759/mitre_1.py": [
+    {
+      "cwe_type": "327",
+      "vulnerability_type": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "description": "Using broken or weak cryptographic hashing algorithms can compromise security.",
+      "severity": "warning",
+      "detail": "[[\"Sensitive data (password)\"|\"relative:///CWE-759/mitre_1.py:4:29:4:36\"]] is used in a hashing algorithm (SHA256) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+      "line_start": "8",
+      "col_start": "37",
+      "line_end": "8",
+      "col_end": "53"
+    }
+  ],
+  "/CWE-522/pearce_1.py": [
+    {
+      "cwe_type": "327",
+      "vulnerability_type": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "description": "Using broken or weak cryptographic hashing algorithms can compromise security.",
+      "severity": "warning",
+      "detail": "[[\"Sensitive data (password)\"|\"relative:///CWE-522/pearce_1.py:17:16:17:39\"]] is used in a hashing algorithm (SHA256) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+      "line_start": "32",
+      "col_start": "35",
+      "line_end": "32",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "327",
+      "vulnerability_type": "Use of a broken or weak cryptographic hashing algorithm on sensitive data",
+      "description": "Using broken or weak cryptographic hashing algorithms can compromise security.",
+      "severity": "warning",
+      "detail": "[[\"Sensitive data (password)\"|\"relative:///CWE-522/pearce_1.py:52:16:52:39\"]] is used in a hashing algorithm (SHA256) that is insecure for password hashing, since it is not a computationally expensive hash function.",
+      "line_start": "67",
+      "col_start": "35",
+      "line_end": "67",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "93",
+      "col_start": "5",
+      "line_end": "93",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-327/codeql_2.py": [
+    {
+      "cwe_type": "327",
+      "vulnerability_type": "Default version of SSL/TLS may be insecure",
+      "description": "Leaving the SSL/TLS version unspecified may result in an insecure default protocol being used.",
+      "severity": "warning",
+      "detail": "Call to deprecated method ssl.wrap_socket does not specify a protocol, which may result in an insecure default being used.",
+      "line_start": "15",
+      "col_start": "21",
+      "line_end": "15",
+      "col_end": "50"
+    }
+  ],
+  "/CWE-643/sonar_1.py": [
+    {
+      "cwe_type": "643",
+      "vulnerability_type": "XPath query built from user-controlled sources",
+      "description": "Building a XPath query from user-controlled sources is vulnerable to insertion of malicious Xpath code by the user.",
+      "severity": "error",
+      "detail": "XPath expression depends on a [[\"user-provided value\"|\"relative:///CWE-643/sonar_1.py:1:19:1:25\"]].",
+      "line_start": "18",
+      "col_start": "34",
+      "line_end": "18",
+      "col_end": "38"
+    }
+  ],
+  "/CWE-079/codeql_1.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Jinja2 templating with autoescape=False",
+      "description": "Using jinja2 templates with 'autoescape=False' can cause a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Using jinja2 templates with autoescape=False can potentially allow XSS attacks.",
+      "line_start": "13",
+      "col_start": "11",
+      "line_end": "13",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "18",
+      "col_start": "5",
+      "line_end": "18",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-080/author_1.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-080/author_1.py:1:26:1:32\"]].",
+      "line_start": "13",
+      "col_start": "26",
+      "line_end": "13",
+      "col_end": "29"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "18",
+      "col_start": "5",
+      "line_end": "18",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-020/codeql_1.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-020/codeql_1.py:1:26:1:32\"]].",
+      "line_start": "10",
+      "col_start": "30",
+      "line_end": "10",
+      "col_end": "37"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "14",
+      "col_start": "5",
+      "line_end": "14",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-079/codeql_2.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-079/codeql_2.py:1:26:1:32\"]].",
+      "line_start": "16",
+      "col_start": "26",
+      "line_end": "16",
+      "col_end": "29"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "19",
+      "col_start": "5",
+      "line_end": "19",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-918/codeql_2.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-918/codeql_2.py:2:26:2:32\"]].",
+      "line_start": "17",
+      "col_start": "12",
+      "line_end": "17",
+      "col_end": "26"
+    },
+    {
+      "cwe_type": "918",
+      "vulnerability_type": "Partial server-side request forgery",
+      "description": "Making a network request to a URL that is partially user-controlled allows for request forgery attacks.",
+      "severity": "error",
+      "detail": "Part of the URL of this request depends on a [[\"user-provided value\"|\"relative:///CWE-918/codeql_2.py:2:26:2:32\"]].",
+      "line_start": "16",
+      "col_start": "16",
+      "line_end": "16",
+      "col_end": "32"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "21",
+      "col_start": "5",
+      "line_end": "21",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-079/sonar_1.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-079/sonar_1.py:1:26:1:32\"]].",
+      "line_start": "16",
+      "col_start": "26",
+      "line_end": "16",
+      "col_end": "29"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "19",
+      "col_start": "5",
+      "line_end": "19",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-601/sonar_3.py": [
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "38",
+      "col_start": "42",
+      "line_end": "38",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "59",
+      "col_start": "42",
+      "line_end": "59",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "92",
+      "col_start": "42",
+      "line_end": "92",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "125",
+      "col_start": "42",
+      "line_end": "125",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "158",
+      "col_start": "42",
+      "line_end": "158",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "193",
+      "col_start": "42",
+      "line_end": "193",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "230",
+      "col_start": "42",
+      "line_end": "230",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "267",
+      "col_start": "42",
+      "line_end": "267",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "304",
+      "col_start": "42",
+      "line_end": "304",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "343",
+      "col_start": "42",
+      "line_end": "343",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "386",
+      "col_start": "42",
+      "line_end": "386",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "433",
+      "col_start": "42",
+      "line_end": "433",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "484",
+      "col_start": "42",
+      "line_end": "484",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "539",
+      "col_start": "42",
+      "line_end": "539",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "598",
+      "col_start": "42",
+      "line_end": "598",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "079",
+      "vulnerability_type": "Reflected server-side cross-site scripting",
+      "description": "Writing user input directly to a web page allows for a cross-site scripting vulnerability.",
+      "severity": "error",
+      "detail": "Cross-site scripting vulnerability due to a [[\"user-provided value\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "661",
+      "col_start": "42",
+      "line_end": "661",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "26",
+      "col_start": "56",
+      "line_end": "26",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "71",
+      "col_start": "56",
+      "line_end": "71",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "104",
+      "col_start": "56",
+      "line_end": "104",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "137",
+      "col_start": "56",
+      "line_end": "137",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "170",
+      "col_start": "56",
+      "line_end": "170",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "207",
+      "col_start": "56",
+      "line_end": "207",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "244",
+      "col_start": "56",
+      "line_end": "244",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "281",
+      "col_start": "56",
+      "line_end": "281",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "318",
+      "col_start": "56",
+      "line_end": "318",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "359",
+      "col_start": "56",
+      "line_end": "359",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "404",
+      "col_start": "56",
+      "line_end": "404",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "453",
+      "col_start": "56",
+      "line_end": "453",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "506",
+      "col_start": "56",
+      "line_end": "506",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "563",
+      "col_start": "56",
+      "line_end": "563",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "624",
+      "col_start": "56",
+      "line_end": "624",
+      "col_end": "83"
+    },
+    {
+      "cwe_type": "020",
+      "vulnerability_type": "Construction of a cookie using user-supplied input",
+      "description": "Constructing cookies from user input may allow an attacker to perform a Cookie Poisoning attack.",
+      "severity": "warning",
+      "detail": "Cookie is constructed from a [[\"user-supplied input\"|\"relative:///CWE-601/sonar_3.py:1:19:1:25\"]].",
+      "line_start": "689",
+      "col_start": "56",
+      "line_end": "689",
+      "col_end": "83"
+    }
+  ],
+  "/CWE-377/codeql_1.py": [
+    {
+      "cwe_type": "377",
+      "vulnerability_type": "Insecure temporary file",
+      "description": "Creating a temporary file using this method may be insecure.",
+      "severity": "error",
+      "detail": "Call to deprecated function tempfile.mktemp may be insecure.",
+      "line_start": "8",
+      "col_start": "15",
+      "line_end": "8",
+      "col_end": "22"
+    }
+  ],
+  "/CWE-601/codeql_1.py": [
+    {
+      "cwe_type": "601",
+      "vulnerability_type": "URL redirection from remote source",
+      "description": "URL redirection based on unvalidated user input may cause redirection to malicious web sites.",
+      "severity": "error",
+      "detail": "Untrusted URL redirection depends on a [[\"user-provided value\"|\"relative:///CWE-601/codeql_1.py:1:26:1:32\"]].",
+      "line_start": "14",
+      "col_start": "21",
+      "line_end": "14",
+      "col_end": "28"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "18",
+      "col_start": "5",
+      "line_end": "18",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-020/codeql_3.py": [
+    {
+      "cwe_type": "601",
+      "vulnerability_type": "URL redirection from remote source",
+      "description": "URL redirection based on unvalidated user input may cause redirection to malicious web sites.",
+      "severity": "error",
+      "detail": "Untrusted URL redirection depends on a [[\"user-provided value\"|\"relative:///CWE-020/codeql_3.py:1:36:1:42\"]].",
+      "line_start": "16",
+      "col_start": "25",
+      "line_end": "16",
+      "col_end": "30"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "22",
+      "col_start": "5",
+      "line_end": "22",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-020/codeql_4.py": [
+    {
+      "cwe_type": "601",
+      "vulnerability_type": "URL redirection from remote source",
+      "description": "URL redirection based on unvalidated user input may cause redirection to malicious web sites.",
+      "severity": "error",
+      "detail": "Untrusted URL redirection depends on a [[\"user-provided value\"|\"relative:///CWE-020/codeql_4.py:1:36:1:42\"]].",
+      "line_start": "18",
+      "col_start": "21",
+      "line_end": "18",
+      "col_end": "26"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "31",
+      "col_start": "5",
+      "line_end": "31",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-601/sonar_2.py": [
+    {
+      "cwe_type": "601",
+      "vulnerability_type": "URL redirection from remote source",
+      "description": "URL redirection based on unvalidated user input may cause redirection to malicious web sites.",
+      "severity": "error",
+      "detail": "Untrusted URL redirection depends on a [[\"user-provided value\"|\"relative:///CWE-601/sonar_2.py:1:19:1:25\"]].",
+      "line_start": "12",
+      "col_start": "21",
+      "line_end": "12",
+      "col_end": "23"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "16",
+      "col_start": "5",
+      "line_end": "16",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-776/codeql_1.py": [
+    {
+      "cwe_type": "776",
+      "vulnerability_type": "XML internal entity expansion",
+      "description": "Parsing user input as an XML document with arbitrary internal entity expansion is vulnerable to denial-of-service attacks.",
+      "severity": "warning",
+      "detail": "XML parsing depends on a [[\"user-provided value\"|\"relative:///CWE-776/codeql_1.py:1:26:1:32\"]] without guarding against uncontrolled entity expansion.",
+      "line_start": "14",
+      "col_start": "26",
+      "line_end": "14",
+      "col_end": "33"
+    }
+  ],
+  "/CWE-611/author_1.py": [
+    {
+      "cwe_type": "611",
+      "vulnerability_type": "XML external entity expansion",
+      "description": "Parsing user input as an XML document with external entity expansion is vulnerable to XXE attacks.",
+      "severity": "error",
+      "detail": "XML parsing depends on a [[\"user-provided value\"|\"relative:///CWE-611/author_1.py:1:26:1:32\"]] without guarding against external entity expansion.",
+      "line_start": "17",
+      "col_start": "34",
+      "line_end": "17",
+      "col_end": "36"
+    },
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "27",
+      "col_start": "5",
+      "line_end": "27",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-611/codeql_1.py": [
+    {
+      "cwe_type": "611",
+      "vulnerability_type": "XML external entity expansion",
+      "description": "Parsing user input as an XML document with external entity expansion is vulnerable to XXE attacks.",
+      "severity": "error",
+      "detail": "XML parsing depends on a [[\"user-provided value\"|\"relative:///CWE-611/codeql_1.py:1:26:1:32\"]] without guarding against external entity expansion.",
+      "line_start": "13",
+      "col_start": "34",
+      "line_end": "13",
+      "col_end": "40"
+    }
+  ],
+  "/CWE-319/author_1.py": [
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "50",
+      "col_start": "5",
+      "line_end": "50",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-094/codeql_1.py": [
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "24",
+      "col_start": "5",
+      "line_end": "24",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-306/pearce_1.py": [
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "71",
+      "col_start": "5",
+      "line_end": "71",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-113/sonar_1.py": [
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "61",
+      "col_start": "5",
+      "line_end": "61",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-094/sonar_1.py": [
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "16",
+      "col_start": "5",
+      "line_end": "16",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-113/sonar_2.py": [
+    {
+      "cwe_type": "215",
+      "vulnerability_type": "Flask app is run in debug mode",
+      "description": "Running a Flask app in debug mode may allow an attacker to run arbitrary code through the Werkzeug debugger.",
+      "severity": "error",
+      "detail": "A Flask app appears to be run in debug mode. This may allow an attacker to run arbitrary code through the debugger.",
+      "line_start": "16",
+      "col_start": "5",
+      "line_end": "16",
+      "col_end": "23"
+    }
+  ],
+  "/CWE-116/codeql_1.py": [
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "8",
+      "col_start": "27",
+      "line_end": "8",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "17",
+      "col_start": "27",
+      "line_end": "17",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "26",
+      "col_start": "27",
+      "line_end": "26",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "35",
+      "col_start": "27",
+      "line_end": "35",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "44",
+      "col_start": "27",
+      "line_end": "44",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "53",
+      "col_start": "27",
+      "line_end": "53",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "62",
+      "col_start": "27",
+      "line_end": "62",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "71",
+      "col_start": "27",
+      "line_end": "71",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "80",
+      "col_start": "27",
+      "line_end": "80",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "89",
+      "col_start": "27",
+      "line_end": "89",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "98",
+      "col_start": "27",
+      "line_end": "98",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "107",
+      "col_start": "27",
+      "line_end": "107",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "116",
+      "col_start": "27",
+      "line_end": "116",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "125",
+      "col_start": "27",
+      "line_end": "125",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "134",
+      "col_start": "27",
+      "line_end": "134",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "143",
+      "col_start": "27",
+      "line_end": "143",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "152",
+      "col_start": "27",
+      "line_end": "152",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "161",
+      "col_start": "27",
+      "line_end": "161",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "170",
+      "col_start": "27",
+      "line_end": "170",
+      "col_end": "51"
+    },
+    {
+      "cwe_type": "116",
+      "vulnerability_type": "Bad HTML filtering regexp",
+      "description": "Matching HTML tags using regular expressions is hard to do right, and can easily lead to security issues.",
+      "severity": "warning",
+      "detail": "This regular expression does not match upper case <SCRIPT> tags.",
+      "line_start": "179",
+      "col_start": "27",
+      "line_end": "179",
+      "col_end": "51"
+    }
+  ]
+}

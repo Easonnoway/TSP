@@ -42,19 +42,14 @@ ENV/
 # ============================
 # Generated training artifacts
 # ============================
-TSP_Code/train/output/
+src/training/output/
 
 # ============================
 # Intermediate generated data
 # (produced by annotation/inference pipeline)
 # ============================
-TSP_Code/dataset_process_and_inference/output_data/*_with_nodes*.json
-TSP_Code/dataset_process_and_inference/output_data/*_generation*.json
-
-# ============================
-# Experimental data (not uploaded to GitHub)
-# ============================
-RQ_Data/
+src/dataset_processing/*_with_nodes*.json
+src/dataset_processing/*_generation*.json
 
 # ============================
 # API keys / credentials
@@ -62,7 +57,7 @@ RQ_Data/
 .env
 
 # ============================
-# Logs, caches
+# Logs
 # ============================
 *.log
 .cache/
