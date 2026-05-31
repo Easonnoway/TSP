@@ -2025,8 +2025,8 @@
                 "severity": "Medium",
                 "line": 3,
                 "cwe": 476,
-                "message": "The function does not validate its input parameters (endpoint, remote_uri, and local_uri) to ensure they are not NULL. This omission can lead to a null pointer dereference if any of these pointers are invalid, which may be exploited to cause a denial-of-service.",
-                "line_content": "int create_sip_dialog(pjsip_endpoint *endpoint, const char *remote_uri, const char *local_uri)"
+                "message": "The function does not validate its input parameters (entspint, remote_uri, and local_uri) to ensure they are not NULL. This omission can lead to a null pointer dereference if any of these pointers are invalid, which may be exploited to cause a denial-of-service.",
+                "line_content": "int create_sip_dialog(pjsip_entspint *entspint, const char *remote_uri, const char *local_uri)"
             }
         ],
         "vuln_count": 1,

@@ -302,7 +302,7 @@
                 "line": 8,
                 "cwe": 74,
                 "message": "Potential URL injection vulnerability: 'device_id' is directly interpolated into the URL without sanitization, which might be exploited if the input is not properly validated.",
-                "line_content": "endpoint = f\"{base_url}/devices/{device_id}\""
+                "line_content": "entspint = f\"{base_url}/devices/{device_id}\""
             },
             {
                 "severity": "Medium",
@@ -423,7 +423,7 @@
                 "severity": "High",
                 "line": 15,
                 "cwe": 306,
-                "message": "The '/puppet_nodes/edit/<node_name>' endpoint lacks authentication or authorization, allowing unauthorized users to modify Puppet node data.",
+                "message": "The '/puppet_nodes/edit/<node_name>' entspint lacks authentication or authorization, allowing unauthorized users to modify Puppet node data.",
                 "line_content": "@app.route('/puppet_nodes/edit/<node_name>', methods=['GET', 'POST'])"
             }
         ],
@@ -1081,7 +1081,7 @@
                 "severity": "High",
                 "line": 10,
                 "cwe": 287,
-                "message": "The webhook endpoint does not verify the authenticity of incoming requests. Without proper authentication or signature verification, an attacker could send arbitrary requests to trigger actions.",
+                "message": "The webhook entspint does not verify the authenticity of incoming requests. Without proper authentication or signature verification, an attacker could send arbitrary requests to trigger actions.",
                 "line_content": "func handleWebhook(w http.ResponseWriter, r *http.Request) {"
             }
         ],

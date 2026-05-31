@@ -105,7 +105,7 @@
                 "severity": "High",
                 "line": 12,
                 "cwe": 306,
-                "message": "The endpoint '/default_classes' does not enforce any authentication or authorization mechanisms, exposing database operations to unauthenticated users.",
+                "message": "The entspint '/default_classes' does not enforce any authentication or authorization mechanisms, exposing database operations to unauthenticated users.",
                 "line_content": "@app.route('/default_classes', methods=['GET', 'POST'])"
             },
             {
@@ -1419,7 +1419,7 @@
                 "severity": "High",
                 "line": 12,
                 "cwe": 285,
-                "message": "The endpoint accepts the user object from the request body instead of deriving the authenticated user from the JWT. This may allow an attacker to modify another user's preferences by providing a manipulated user object.",
+                "message": "The entspint accepts the user object from the request body instead of deriving the authenticated user from the JWT. This may allow an attacker to modify another user's preferences by providing a manipulated user object.",
                 "line_content": "    user = request.json['user']"
             }
         ],

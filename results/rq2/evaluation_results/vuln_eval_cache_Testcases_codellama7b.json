@@ -92,7 +92,7 @@
                 "severity": "high",
                 "line": 12,
                 "cwe": 0,
-                "message": "The '/default_classes' endpoint lacks any authentication or authorization mechanisms, potentially exposing sensitive database information and operations to unauthorized users.",
+                "message": "The '/default_classes' entspint lacks any authentication or authorization mechanisms, potentially exposing sensitive database information and operations to unauthorized users.",
                 "line_content": "@app.route('/default_classes', methods=['GET', 'POST'])"
             },
             {
@@ -778,7 +778,7 @@
                 "severity": "High",
                 "line": 13,
                 "cwe": 287,
-                "message": "Lack of authentication/authorization on sensitive endpoints exposes configuration data and update operations to unauthorized users.",
+                "message": "Lack of authentication/authorization on sensitive entspints exposes configuration data and update operations to unauthorized users.",
                 "line_content": "@app.route('/nodes/<node_name>', methods=['GET', 'POST'])"
             }
         ],
@@ -1530,7 +1530,7 @@
                 "severity": "high",
                 "line": 7,
                 "cwe": 306,
-                "message": "The endpoint lacks authentication and authorization, allowing any user to modify the 'variables' global state.",
+                "message": "The entspint lacks authentication and authorization, allowing any user to modify the 'variables' global state.",
                 "line_content": "@app.route('/variables', methods=['GET', 'POST'])"
             },
             {
@@ -1551,7 +1551,7 @@
                 "severity": "high",
                 "line": 12,
                 "cwe": 285,
-                "message": "Lack of proper authorization: the endpoint accepts a 'user_id' from the JSON payload without verifying it against the identity in the JWT token. This can allow an authenticated user to modify another user's preferences.",
+                "message": "Lack of proper authorization: the entspint accepts a 'user_id' from the JSON payload without verifying it against the identity in the JWT token. This can allow an authenticated user to modify another user's preferences.",
                 "line_content": "    user_id = request.json['user_id']"
             }
         ],

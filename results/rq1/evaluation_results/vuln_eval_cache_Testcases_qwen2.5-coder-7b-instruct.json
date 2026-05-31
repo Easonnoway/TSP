@@ -1283,7 +1283,7 @@
                 "severity": "medium",
                 "line": 61,
                 "cwe": 0,
-                "message": "The parent process writes to the wrong end of the socket pair. After closing pipefd[1], the parent should signal the child using the remaining endpoint corresponding to the other side, not pipefd[0]. This misuse may result in improper inter-process synchronization or a potential deadlock.",
+                "message": "The parent process writes to the wrong end of the socket pair. After closing pipefd[1], the parent should signal the child using the remaining entspint corresponding to the other side, not pipefd[0]. This misuse may result in improper inter-process synchronization or a potential deadlock.",
                 "line_content": "    write(ctx->pipefd[0], &dummy, 1);"
             }
         ],

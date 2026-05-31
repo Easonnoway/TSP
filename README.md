@@ -37,7 +37,7 @@ Our experiments show that TSP significantly enhances the security of code genera
 - Python 3.10+
 - CUDA-compatible GPU with at least 24GB VRAM (for 7B model training)
 - [vLLM](https://github.com/vllm-project/vllm) for inference
-- [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) for DPO training
+- [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) for TSP training
 
 ### Installation
 
@@ -75,36 +75,67 @@ These serve as the input for the TSP pipeline.
 
 ### Quick Start
 
-Run the full TSP pipeline with CodeLlama-7B:
+Run the full TSP pipeline (Algorithm 1) with CodeLlama-7B:
 
 ```bash
-# Set environment variables
-export TSP_MODEL_PATH="CodeLlama-7b-Instruct-hf"
-
-# Run the pipeline
-bash src/training/TSP_example.sh \
-    -i data/annotated_datasets/sec-new-desc_annotated_with_nodes.json \
-    -o ./output
+python src/run_tsp.py \
+    --input data/annotated_datasets/sec-new-desc_annotated.json \
+    --output ./output \
+    --model CodeLlama-7b-Instruct-hf \
+    --iterations 2
 ```
 
-The pipeline consists of three steps:
-1. **Inference** — Generate code completions at CWE risk nodes using vLLM
-2. **Preference Pair Creation** — Build DPO training pairs from secure/insecure generations
-3. **Training** — Fine-tune the model using DPO via LLaMA-Factory
+The pipeline implements Algorithm 1 from the paper:
+
+```
+for t = 1, ..., T do
+    Step 1: Generate self-play branches at CWE Risk Nodes (opponent player)
+    Step 2: Build preference pairs (golden path vs. self-play path)
+    Step 3: Train main player via preference optimization
+```
+
+#### Advanced Options
+
+```bash
+python src/run_tsp.py \
+    --input data/annotated_datasets/diversevul_new_annotated.json \
+    --output ./output \
+    --model Qwen/Qwen2.5-Coder-7B-Instruct \
+    --config src/configs/qwencoder_7b.yaml \
+    --iterations 3 \
+    --temperature 1.0 \
+    --samples-per-node 4 \
+    --gpu-ids 0,1,2,3 \
+    --tensor-parallel 4
+```
+
+#### Step 0: CWE Risk Node Annotation (optional)
+
+If you want to annotate your own dataset with CWE Risk Nodes using GPT-4o:
+
+```python
+from tsp import annotate_dataset, parse_risk_nodes
+
+# Annotate with GPT-4o
+annotate_dataset("raw_data.json", "annotated.json", api_key="sk-...")
+
+# Parse raw annotations into structured nodes
+parse_risk_nodes("annotated.json", "parsed.json")
+```
 
 ### Reproducing Evaluation
 
-See `src/evaluation/` for evaluation scripts used in our experiments:
+See `src/evaluate/` for evaluation scripts used in our experiments:
 
 ```bash
-# Run inference for evaluation
-bash src/evaluation/inference/script.sh
+# Run inference for evaluation (specify RQ and model)
+bash src/evaluate/inference_script.sh --rq 1 --model codellama7b_tsp
 
 # Run LLM-based vulnerability evaluation
-python src/evaluation/llm_evaluate/llm_evaluate_vuln.py
+python src/evaluate/llm_evaluate.py --target-dir <testcases_dir> --api-key <key>
 
 # Run CodeQL-based evaluation (RQ1)
-bash src/evaluation/codeql/codeql_analysis_script.sh
+bash src/evaluate/codeql_run.sh --codeql-path /path/to/codeql --models codellama7b_tsp
 ```
 
 ### Configuration via Environment Variables
@@ -113,56 +144,44 @@ bash src/evaluation/codeql/codeql_analysis_script.sh
 |----------|---------|-------------|
 | `OPENAI_API_KEY` | (required) | API key for GPT-4o annotation |
 | `OPENAI_API_BASE` | `https://api.openai.com/v1` | API base URL for annotation |
-| `TSP_MODEL_PATH` | `CodeLlama-7b-Instruct-hf` | Model name or path for inference |
 | `LLAMA_FACTORY_DIR` | `<repo>/LLaMA-Factory` | Path to LLaMA-Factory installation |
 | `TSP_CACHE_DIR` | `./cache` | Cache directory for API responses |
-| `TSP_DATA_DIR` | `../../data` | Default data directory (shell scripts) |
-| `TSP_OUTPUT_DIR` | `../../output_data` | Default output directory (shell scripts) |
-| `TSP_MODEL_DIR` | `../../models` | Default model directory (shell scripts) |
 
 ## Repository Structure
 
 ```
 TSP/
 ├── src/
-│   ├── api_annotation/                      # GPT-4o CWE vulnerability annotation
-│   │   ├── api_annotation.py                # Ray-based parallel API client
-│   │   ├── api_prompt.py                    # System prompt template
-│   │   └── script.sh                        # Annotation pipeline wrapper
-│   ├── dataset_processing/                  # Dataset processing & DPO conversion
-│   │   ├── utils.py                         # Post-processing & DPO format conversion
-│   │   └── inference/
-│   │       ├── inference_with_template.py   # vLLM code generation at risk nodes
-│   │       └── script.sh                    # Inference pipeline wrapper
-│   ├── training/                            # DPO training
-│   │   ├── TSP_example.sh                   # Main 3-step pipeline entry point
-│   │   └── config/
-│   │       ├── codellama_7b.yaml            # CodeLlama-7B DPO training config
-│   │       └── qwencoder_7b.yaml            # Qwen2.5-Coder-7B DPO training config
-│   └── evaluation/                          # Evaluation scripts (RQ1/RQ2/RQ3)
-│       ├── inference/
-│       │   ├── inference_with_template.py   # Unified evaluation inference
-│       │   ├── convert_to_database.py       # Convert outputs to CodeQL databases
-│       │   └── script.sh
-│       ├── llm_evaluate/
-│       │   ├── llm_evaluate_vuln.py         # LLM-based vulnerability evaluation
-│       │   └── calculate_results.py         # Result aggregation
-│       └── codeql/
-│           ├── analyze_cwe_vulnerabilities.py  # CodeQL CWE analysis
-│           └── codeql_analysis_script.sh
+│   ├── tsp/                                  # TSP algorithm (Algorithm 1)
+│   │   ├── prompts.py                        # CWE Risk Node annotation prompts
+│   │   ├── annotate.py                       # Step 0: GPT-4o CWE annotation + parsing
+│   │   ├── generate.py                       # Step 1: Opponent branch generation (vLLM)
+│   │   ├── pairs.py                          # Step 2: Preference pair construction
+│   │   └── train.py                          # Step 3: TSP training (LLaMA-Factory)
+│   ├── configs/                              # Training configurations
+│   │   ├── codellama_7b.yaml                 # CodeLlama-7B TSP training config
+│   │   └── qwencoder_7b.yaml                 # Qwen2.5-Coder-7B TSP training config
+│   ├── run_tsp.py                            # Main entry: full TSP pipeline
+│   └── evaluate/                             # Post-training evaluation
+│       ├── inference.py                      # Multi-model evaluation inference
+│       ├── llm_evaluate.py                   # LLM-based vulnerability evaluation
+│       ├── codeql_analyze.py                 # CodeQL CWE analysis
+│       ├── codeql_run.sh                     # CodeQL runner script
+│       ├── convert_to_database.py            # Inference output → test files
+│       └── calculate_results.py              # Result aggregation
 ├── data/
-│   ├── annotated_datasets/                  # Training datasets
+│   ├── annotated_datasets/                   # Training datasets
 │   │   ├── diversevul_new_annotated.json
 │   │   └── sec-new-desc_annotated.json
-│   ├── evaluation_datasets/                 # Evaluation datasets (per RQ)
+│   ├── evaluation_datasets/                  # Evaluation datasets (per RQ)
 │   │   ├── rq1_dataset.json
 │   │   ├── rq2_dataset.json
 │   │   ├── rq1_cwe_evaluate.json
 │   │   └── rq3_cwe_evaluate_ablation.json
-│   └── testcases.zip                        # Generated test cases (all RQs)
-├── results/                                 # Experimental results
+│   └── testcases.zip                         # Generated test cases (all RQs)
+├── results/                                  # Experimental results
 │   ├── rq1/
-│   │   ├── inference_outputs/               # Model inference outputs
+│   │   ├── inference_outputs/                # Model inference outputs
 │   │   ├── evaluation_results/              # LLM evaluation results
 │   │   └── codeql_results/                  # CodeQL analysis results
 │   ├── rq2/
@@ -171,24 +190,11 @@ TSP/
 │   └── rq3/
 │       ├── inference_outputs/
 │       └── evaluation_results/
-├── requirements.txt                         # Python dependencies
-├── .env.example                             # Environment variable template
-├── LICENSE                                  # MIT License
-├── CITATION.cff                             # Citation metadata
-└── README.md                                # This file
-```
-
-## Citation
-
-If you use this work, please cite our paper:
-
-```bibtex
-@article{tsp2025,
-  title={Learn from Your Mistakes: Tree-like Self-Play for Secure Code LLMs},
-  author={},
-  journal={},
-  year={2025}
-}
+├── requirements.txt                          # Python dependencies
+├── .env.example                              # Environment variable template
+├── LICENSE                                   # MIT License
+├── CITATION.cff                              # Citation metadata
+└── README.md                                 # This file
 ```
 
 ## License

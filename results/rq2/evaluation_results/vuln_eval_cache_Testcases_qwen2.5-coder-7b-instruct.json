@@ -126,7 +126,7 @@
                 "severity": "medium",
                 "line": 25,
                 "cwe": 306,
-                "message": "The API endpoints lack any authentication or authorization checks, allowing unauthorized users to access and modify sensitive data.",
+                "message": "The API entspints lack any authentication or authorization checks, allowing unauthorized users to access and modify sensitive data.",
                 "line_content": "@app.route('/puppet/enc', methods=['POST'])"
             }
         ],
@@ -468,7 +468,7 @@
                 "severity": "high",
                 "line": 17,
                 "cwe": 0,
-                "message": "Missing CSRF protection: The POST route does not implement any CSRF token mechanism, leaving the endpoint vulnerable to cross-site request forgery attacks.",
+                "message": "Missing CSRF protection: The POST route does not implement any CSRF token mechanism, leaving the entspint vulnerable to cross-site request forgery attacks.",
                 "line_content": "elif request.method == 'POST':"
             },
             {
@@ -1490,7 +1490,7 @@
                 "severity": "High",
                 "line": 13,
                 "cwe": 352,
-                "message": "Missing CSRF protection on POST endpoints can lead to Cross-Site Request Forgery attacks.",
+                "message": "Missing CSRF protection on POST entspints can lead to Cross-Site Request Forgery attacks.",
                 "line_content": "@app.route('/login', methods=['GET', 'POST'])"
             }
         ],
