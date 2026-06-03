@@ -18,6 +18,28 @@ from typing import Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
+# Lazy imports for GPU dependencies (mockable in tests)
+_LLM = None
+_SamplingParams = None
+
+
+def _get_llm():
+    """Lazy-load vLLM LLM class (mockable in tests)."""
+    global _LLM
+    if _LLM is None:
+        from vllm import LLM
+        _LLM = LLM
+    return _LLM
+
+
+def _get_sampling_params():
+    """Lazy-load vLLM SamplingParams class (mockable in tests)."""
+    global _SamplingParams
+    if _SamplingParams is None:
+        from vllm import SamplingParams
+        _SamplingParams = SamplingParams
+    return _SamplingParams
+
 
 def _create_codellama_prompt(description: str, code_prefix: str) -> str:
     """Create prompt for CodeLlama-style models."""
@@ -89,7 +111,8 @@ def generate_branches(
     Returns:
         Path to the output file.
     """
-    from vllm import LLM, SamplingParams
+    LLM = _get_llm()
+    SamplingParams = _get_sampling_params()
 
     os.environ["CUDA_VISIBLE_DEVICES"] = gpu_ids
 

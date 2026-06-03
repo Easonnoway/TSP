@@ -4,7 +4,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-green.svg)](https://www.python.org/)
 
 This repository contains the implementation for the paper *"Learn from Your Mistakes:
-Tree-like Self-Play for Secure Code LLMs"*.
+Tree-like Self-Play for Secure Code LLMs"* ([arXiv:2606.03489](http://arxiv.org/abs/2606.03489)).
 
 ## Abstract
 
@@ -195,6 +195,22 @@ TSP/
 ├── LICENSE                                   # MIT License
 ├── CITATION.cff                              # Citation metadata
 └── README.md                                 # This file
+```
+
+## Citation
+
+If you use this work, please cite our paper:
+
+```bibtex
+@misc{chen2026learnmistakestreelikeselfplay,
+      title={Learn from Your Mistakes: Tree-like Self-Play for Secure Code LLMs}, 
+      author={Wenqi Chen and Ziyan Zhang and Bing Wang and Lin Liu and Hengheng Zhang and Zhengsu Chen},
+      year={2026},
+      eprint={2606.03489},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2606.03489}, 
+}
 ```
 
 ## License
